@@ -7,7 +7,10 @@
 //
 
 #import <GoogleMaps/GoogleMaps.h>
+#import "RestaurantModel.h"
 
 @interface RestaurantMarker : GMSMarker
+
+@property (strong, nonatomic) RestaurantModel *restaurant;
 
 @end

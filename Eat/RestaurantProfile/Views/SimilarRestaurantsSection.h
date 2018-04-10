@@ -13,6 +13,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *sectionName;
 @property (weak, nonatomic) IBOutlet UICollectionView *restaurantsCollectionView;
 
-- (void)setUpSimilarRestaurantsByCuisineSection:(NSArray*)restaurants;
+- (void)setUpSimilarRestaurantsSection:(NSArray*)restaurants sectionName:(NSString*)name;
 
 @end

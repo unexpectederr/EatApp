@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[RestaurantProfileViewController viewDidLoad]:RestaurantProfileViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.navigationController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__47-[RestaurantsMapView mapView:markerInfoWindow:]_block_invoke:RestaurantsMapView.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[RestaurantsViewController viewDidLoad]:RestaurantsViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.navigationItem">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ImagesPagerViewController pageViewController:didFinishAnimating:previousViewControllers:transitionCompleted:]:ImagesPagerViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "pageViewController.viewControllers">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__47-[RestaurantsMapView mapView:markerInfoWindow:]_block_invoke_2:RestaurantsMapView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "image">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[RestaurantsListViewController didSwitchMainView]:RestaurantsListViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.navigationBarItems">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__70-[RestaurantsListInteractor getRestaurantsForRegion:andPage:complete:]_block_invoke:RestaurantsListInteractor.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "dictionary">
+            </PersistentString>
+            <PersistentString
+               value = "[task allHeaderFields]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[RestaurantProfileViewController viewWillAppear:]:RestaurantProfileViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.navigationController.navigationItem">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ImagesPagerViewController viewControllerAtIndex:]:ImagesPagerViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[RegionsInteractor getRegions:]:RegionsInteractor.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "((AppDelegate*)[UIApplication sharedApplication]).baseURL">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[NotesSection setUpNotesView:]:NotesSection.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.note.bounds.size.height">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[NavigationBarItems mainViewSwitch:]:NavigationBarItems.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.delegate">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[TripAdvisorReviewsViewController collectionView:cellForItemAtIndexPath:]:TripAdvisorReviewsViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "cell.reviewText">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[NotesSection readMoreBtn:]:NotesSection.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.note.bounds.size.height">
+            </PersistentString>
+            <PersistentString
+               value = "self.note">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

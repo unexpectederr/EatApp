@@ -12,7 +12,10 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+}
+
+- (void)buildCell:(NSString*)info {
+    self.info.text = info;
 }
 
 @end

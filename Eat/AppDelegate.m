@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+@import GoogleMaps;
 
 @interface AppDelegate ()
 
@@ -17,6 +18,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    _baseURL = @"https://api.eatapp.co/";
+    [GMSServices provideAPIKey:@"AIzaSyADnNrdPUaLY0UFdDDH_1bw-rrq7VcuQxM"];
     return YES;
 }
 

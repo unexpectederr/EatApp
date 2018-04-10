@@ -25,7 +25,7 @@
 
 -(void)initView {
     
-    UIView *view = [[[NSBundle bundleForClass:[self class]] loadNibNamed:@"SimilarRestaurantsCuisineSection" owner:self options:nil] firstObject];
+    UIView *view = [[[NSBundle bundleForClass:[self class]] loadNibNamed:@"SimilarRestaurantsSection" owner:self options:nil] firstObject];
     [self addSubview:view];
     view.frame = self.bounds;
     
@@ -35,8 +35,9 @@
     
 }
 
-- (void)setUpSimilarRestaurantsByCuisineSection:(NSArray*)restaurants {
+- (void)setUpSimilarRestaurantsSection:(NSArray*)restaurants sectionName:(NSString*)name{
     restaurantsArray = restaurants;
+    self.sectionName.text = name;
     [self.restaurantsCollectionView reloadData];
 }
 

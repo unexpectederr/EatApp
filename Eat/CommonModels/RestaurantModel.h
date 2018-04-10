@@ -36,7 +36,7 @@
 @property (assign, nonatomic) double latitude;
 @property (assign, nonatomic) double longitude;
 @property (strong, nonatomic) NSString* description;
-@property (strong, nonatomic) NSString* operating_hours;
+@property (strong, nonatomic) NSString<Optional>* operating_hours;
 @property (strong, nonatomic) NSString<Optional>* custom_confirmation_comments;
 @property (strong, nonatomic) NSString<Optional>* notice;
 @property (strong, nonatomic) NSString<Optional>* menu_url;

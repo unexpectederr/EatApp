@@ -18,6 +18,6 @@
 
 @property (weak, nonatomic) id<RestaurantsListPresenterProtocol> delegate;
 
-- (void)getRestaurantsForRegion:(NSString*)region;
+- (void)getRestaurantsForRegion:(NSString*)region andPage:(NSInteger)page;
 
 @end

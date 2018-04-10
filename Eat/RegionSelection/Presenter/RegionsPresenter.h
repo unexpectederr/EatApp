@@ -8,6 +8,20 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol RegionsPresenterProtocol
+
+- (void)didGetRegions:(NSArray*)regions;
+- (void)didGetCuisines:(id)response;
+- (void)didGetNeigbourhoods:(id)response;
+
+@end
+
 @interface RegionsPresenter : NSObject
+
+@property (weak, nonatomic) id<RegionsPresenterProtocol> delegate;
+
+- (void)getRegions;
+- (void)getCuisines;
+- (void)getNeigbourhoods;
 
 @end

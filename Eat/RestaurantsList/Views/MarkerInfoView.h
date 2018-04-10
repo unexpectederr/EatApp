@@ -10,4 +10,8 @@
 
 @interface MarkerInfoView : UIView
 
+@property (weak, nonatomic) IBOutlet UIImageView *restaurantImage;
+@property (weak, nonatomic) IBOutlet UILabel *restaurantName;
+@property (weak, nonatomic) IBOutlet UILabel *restaurantAddress;
+
 @end

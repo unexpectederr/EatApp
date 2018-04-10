@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RegionModel.h"
 
 @interface RegionCollectionViewCell : UICollectionViewCell
+
+@property (weak, nonatomic) IBOutlet UILabel *regionName;
+@property (weak, nonatomic) IBOutlet UIImageView *regionImage;
+
+- (void)buildCell:(RegionModel*)region;
 
 @end

@@ -7,7 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RestaurantModel.h"
+#import <GoogleMaps/GoogleMaps.h>
 
-@interface RestaurantsMapView : UIView
+@protocol RestaurantsMapViewProtocol
+
+- (void)didTapOnMarkerInfoWindow:(RestaurantModel*)restaurant;
+
+@end
+
+@interface RestaurantsMapView : UIView <GMSMapViewDelegate>
+
+@property (weak, nonatomic) IBOutlet GMSMapView *restaurantsMapView;
+@property (weak, nonatomic) id<RestaurantsMapViewProtocol> delegate;
+
+- (id)initWithFrame:(CGRect)frame andRestaurnatsList:(NSArray<RestaurantModel*>*) restaurants;
 
 @end

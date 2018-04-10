@@ -10,6 +10,7 @@
 
 @interface RestaurantsListInteractor : NSObject
 
-- (void)getRestaurantsForRegion:(NSString*)region complete:(void (^)(NSArray *regions))completionBlock;
+@property (strong, nonatomic) NSString* restaurantsLoadingLink;
+- (void)getRestaurantsForRegion:(NSString*)region andPage:(NSInteger)page complete:(void (^)(NSArray *restaurants))completionBlock;
 
 @end

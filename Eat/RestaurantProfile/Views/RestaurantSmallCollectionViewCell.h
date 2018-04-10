@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RestaurantModel.h"
 
 @interface RestaurantSmallCollectionViewCell : UICollectionViewCell
+
+@property (weak, nonatomic) IBOutlet UILabel *restaurantName;
+@property (weak, nonatomic) IBOutlet UILabel *cuisineName;
+@property (weak, nonatomic) IBOutlet UILabel *tripAdvisorRating;
+@property (weak, nonatomic) IBOutlet UIImageView *restaurantImage;
+
+- (void)buildCell:(RestaurantModel*)restaurant;
 
 @end

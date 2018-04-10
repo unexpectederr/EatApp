@@ -45,7 +45,14 @@
         self.deals.layer.masksToBounds = YES;
     }
     
-    [self.restaurantImage sd_setImageWithURL:[NSURL URLWithString:restaurant.image_url] placeholderImage:nil];
+    self.tripAdvisorRating.text = [NSString stringWithFormat:@"%.1f - %d Reviews", restaurant.rating.average_rating, restaurant.rating.number_of_ratings];
+    
+    [self.restaurantImage sd_setImageWithURL:[NSURL URLWithString:restaurant.image_url] placeholderImage:nil completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+        self.restaurantImage.alpha = 0;
+        [UIView animateWithDuration:1.0f animations:^(void) {
+            self.restaurantImage.alpha = 1;
+        }];
+    }];
 }
 
 @end

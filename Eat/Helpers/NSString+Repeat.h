@@ -10,4 +10,6 @@
 
 @interface NSString (Repeat)
 
+- (NSString *)repeatTimes:(NSUInteger)times;
+
 @end

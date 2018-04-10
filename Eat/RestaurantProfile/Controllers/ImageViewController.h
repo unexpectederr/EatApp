@@ -10,4 +10,8 @@
 
 @interface ImageViewController : UIViewController
 
+@property (nonatomic, assign) NSUInteger pageIndex;
+@property (nonatomic, assign) NSString *imageUrl;
+@property (weak, nonatomic) IBOutlet UIImageView *restaurantImage;
+
 @end

@@ -10,4 +10,8 @@
 
 @interface RegionsInteractor : NSObject
 
+- (void)getRegions:(void (^)(NSArray *regions))completionBlock;
+- (void)getCuisines:(void (^)(id responseObject))completionBlock;
+- (void)getNeigbourhoods:(void (^)(id responseObject))completionBlock;
+
 @end

@@ -10,4 +10,8 @@
 
 @implementation NSString (Repeat)
 
+- (NSString *)repeatTimes:(NSUInteger)times {
+    return [@"" stringByPaddingToLength:times * [self length] withString:self startingAtIndex:0];
+}
+
 @end

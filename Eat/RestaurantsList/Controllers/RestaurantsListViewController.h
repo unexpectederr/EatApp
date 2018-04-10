@@ -14,5 +14,6 @@
 @property (strong, nonatomic) NSString *regionCode;
 @property (weak, nonatomic) IBOutlet UICollectionView *restaurantsCollectionView;
 @property (weak, nonatomic) IBOutlet NavigationBarItems *navigationBarItems;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *paginationLoader;
 
 @end

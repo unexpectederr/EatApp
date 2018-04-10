@@ -7,6 +7,8 @@
 //
 
 #import "TripAdvisorReviewsViewController.h"
+#import "TripAdvisorRevCollectionViewCell.h"
+#import "UIHelper.h"
 
 @interface TripAdvisorReviewsViewController ()
 
@@ -14,12 +16,24 @@
 
 @implementation TripAdvisorReviewsViewController
 
-static NSString * const reuseIdentifier = @"ReviewCell";
+- (void)viewWillAppear:(BOOL)animated {
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
+    self.navigationItem.title = @"TripAdvisor Reviews";
+    self.navigationItem.backBarButtonItem.title = @"";
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.reviewsCollectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
+    [self.reviewsCollectionView registerNib:[UINib nibWithNibName:@"TripAdvisorRevCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"tripAdvisorRevCollectionViewCell"];
+    
+     self.reviewsCollectionView.backgroundColor = [UIColor colorWithCGColor:[UIHelper colorFromHexString:@"#F9FAFC"].CGColor];
+    
+    UICollectionViewFlowLayout *flowLayout = (UICollectionViewFlowLayout*)_reviewsCollectionView.collectionViewLayout;
+    flowLayout.estimatedItemSize = CGSizeMake(1, 1);
+    
+    self.numberOfReviews.text = [NSString stringWithFormat:@"%i reviews", (int)_reviews.count];
     
 }
 
@@ -31,18 +45,19 @@ static NSString * const reuseIdentifier = @"ReviewCell";
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 0;
+    return 1;
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 0;
+    return _reviews.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
-    // Configure the cell
+    TripAdvisorRevCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"tripAdvisorRevCollectionViewCell" forIndexPath:indexPath];
+    
+    [cell setUpCell:(ReviewModel*)_reviews[indexPath.row]];
     
     return cell;
 }

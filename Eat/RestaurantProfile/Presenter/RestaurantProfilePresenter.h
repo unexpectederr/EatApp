@@ -8,6 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol RestaurantProfilePresenterProtocol
+
+- (void)didGetRestaurantsByCuisine:(NSArray*)restaurants;
+- (void)didGetRestaurantsByNeighbourhood:(NSArray*)restaurants;
+
+@end
+
 @interface RestaurantProfilePresenter : NSObject
+
+@property (weak, nonatomic) id<RestaurantProfilePresenterProtocol> delegate;
+
+- (void)getRestaurantsByRegion:(NSString*)region andCusine:(NSString*)cusine;
+- (void)getRestaurantsByNeighbourhood:(NSString*)cusine;
 
 @end

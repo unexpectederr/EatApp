@@ -10,4 +10,8 @@
 
 @interface RestaurantInfoCollectionViewCell : UICollectionViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *info;
+
+- (void)buildCell:(NSString*)info;
+
 @end

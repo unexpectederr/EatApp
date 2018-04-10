@@ -7,6 +7,7 @@
 //
 
 #import "ImagesPagerViewController.h"
+#import "ImageViewController.h"
 
 @interface ImagesPagerViewController ()
 
@@ -16,22 +17,52 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.dataSource = self;
+    self.delegate = self;
+    
+    ImageViewController *viewController = (ImageViewController*)[self viewControllerAtIndex:0];
+    NSArray *viewControllers = [NSArray arrayWithObject:viewController];
+    [self setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:nil completion:nil];
+    //self.currentView = viewController;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (UIViewController *) viewControllerAtIndex:(NSUInteger)index {
+    
+    ImageViewController *viewController = (ImageViewController*)[self.storyboard instantiateViewControllerWithIdentifier:@"ImageViewController"];
+    viewController.imageUrl = self.imageUrls[index];
+    viewController.pageIndex = index;
+    return viewController;
 }
-*/
 
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
+    NSUInteger index = ((ImageViewController*) viewController).pageIndex;
+    if (index == 0 || index == NSNotFound)
+        return nil;
+    index--;
+    return [self viewControllerAtIndex:index];
+}
+
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
+    NSUInteger index = ((ImageViewController*) viewController).pageIndex;
+    if (index == NSNotFound)
+        return nil;
+    index++;
+    if (index == self.imageUrls.count)
+        return nil;
+    return [self viewControllerAtIndex:index];
+}
+
+-(void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray<UIViewController *> *)previousViewControllers transitionCompleted:(BOOL)completed {
+    if (!completed) {
+        return;
+    } else {
+        [self.dellegate didSwipe:((ImageViewController*) pageViewController.viewControllers.firstObject).pageIndex];
+    }
+}
+         
 @end

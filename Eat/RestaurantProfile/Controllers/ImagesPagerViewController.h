@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ImagesPagerViewController : UIPageViewController
+@protocol ImagesPagerViewControllerDelegate
+
+- (void)didSwipe:(NSInteger)selectedIndex;
+
+@end
+
+@interface ImagesPagerViewController : UIPageViewController <UIPageViewControllerDataSource, UIPageViewControllerDelegate>
+
+@property (nonatomic, strong) NSArray<NSString*> *imageUrls;
+@property (nonatomic, weak) id<ImagesPagerViewControllerDelegate> dellegate;
 
 @end

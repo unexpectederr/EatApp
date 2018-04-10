@@ -10,4 +10,7 @@
 
 @interface RestaurantProfileInteractor : NSObject
 
+- (void)getRestaurantsByRegion:(NSString*)region andCusine:(NSString*)cusine complete:(void (^)(NSArray *restaurants))completionBlock;
+- (void)getRestaurantsByNeighbourhood:(NSString*)neighbourhood complete:(void (^)(NSArray *restaurants))completionBlock;
+
 @end

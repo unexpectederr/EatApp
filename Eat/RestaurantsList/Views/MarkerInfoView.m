@@ -10,12 +10,30 @@
 
 @implementation MarkerInfoView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (id)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self initView];
+    }
+    return self;
 }
-*/
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        [self initView];
+    }
+    return self;
+}
+
+- (void)initView {
+    
+    UIView *view = [[[NSBundle bundleForClass:[self class]] loadNibNamed:@"MarkerInfoView" owner:self options:nil] firstObject];
+    [self addSubview:view];
+    view.frame = self.bounds;
+    
+    view.layer.cornerRadius = 3.0f;
+    view.layer.masksToBounds = YES;
+}
 
 @end

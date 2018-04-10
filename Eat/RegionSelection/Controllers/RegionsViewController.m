@@ -10,7 +10,6 @@
 #import "RegionsPresenter.h"
 #import "RegionCollectionViewCell.h"
 #import "RegionModel.h"
-#import <SDWebImage/UIImageView+WebCache.h>
 #import "RestaurantsListViewController.h"
 
 @interface RegionsViewController () <RegionsPresenterProtocol>
@@ -20,8 +19,13 @@
 @implementation RegionsViewController {
     
     NSArray *regionsArray;
+    int counter;
     RegionsPresenter *regionsPresenter;
     
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
 
 - (void)viewDidLoad {
@@ -31,20 +35,39 @@
     regionsPresenter.delegate = self;
     
     [regionsPresenter getRegions];
-    
+    [regionsPresenter getCuisines];
+    [regionsPresenter getNeigbourhoods];
+
     [_regionsCollectionView registerNib:[UINib nibWithNibName:@"RegionCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"regionCollectionViewCell"];
 
     
 }
 
--(void)didGetRegions:(NSArray *)regions {
-    
+#pragma <RegionsPresenterProtocol>
+
+- (void)didGetRegions:(NSArray *)regions {
     regionsArray = regions;
-    [_regionsCollectionView reloadData];
+    [self showRegionList];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
+- (void)didGetCuisines:(id)response {
+    [self showRegionList];
+}
+
+- (void)didGetNeigbourhoods:(id)response {
+    [self showRegionList];
+}
+
+- (void) showRegionList {
+    counter++;
+    if (counter < 3)
+        return;
+    self.regionsCollectionView.hidden = NO;
+    self.regionsCollectionView.alpha = 0;
+    [UIView animateWithDuration:1.0f animations:^{
+        self.regionsCollectionView.alpha = 1;
+    } completion:nil];
+    [self.regionsCollectionView reloadData];
 }
 
 #pragma <CollectionViewDataSource>
@@ -62,17 +85,8 @@
     RegionCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"regionCollectionViewCell" forIndexPath:indexPath];
     
     RegionModel *region = regionsArray[indexPath.row];
-    [cell.regionImage sd_setImageWithURL:[NSURL URLWithString:region.image_url] placeholderImage:nil];
-    cell.regionName.text = region.name;
+    [cell buildCell:region];
     
-    cell.layer.cornerRadius = 3.0f;
-    cell.layer.borderWidth = 1.0f;
-    cell.layer.borderColor = [UIColor colorWithWhite:0.9f alpha:0.65].CGColor;
-    cell.layer.masksToBounds = YES;
-    
-    cell.regionImage.layer.cornerRadius = cell.regionImage.bounds.size.width/2;
-    cell.regionImage.layer.masksToBounds = YES;
-
     return cell;
 }
 
@@ -86,9 +100,14 @@
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
-    UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"RestaurantsListViewController"];
+    RestaurantsListViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"RestaurantsListViewController"];
+    vc.regionCode = ((RegionModel*)regionsArray[indexPath.row]).id;
     [self.navigationController pushViewController:vc animated:YES];
     
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
 }
 
 @end

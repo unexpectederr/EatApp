@@ -9,5 +9,7 @@
 #ifndef Constants_h
 #define Constants_h
 
+#define ENDPOINT_URL @"https://api.eatapp.co"
+#define API_VERSION @"v1"
 
-#endif /* Constants_h */
+#endif

@@ -23,11 +23,16 @@
     return self;
 }
 
-- (void)getRestaurantsForRegion:(NSString*)region {
+- (void)getRestaurantsForRegion:(NSString*)region andPage:(NSInteger)page {
 
-    [restaurantsListInteractor getRestaurantsForRegion:region complete:^(NSArray *regions) {
-        [self.delegate didGetRestaurants:regions];
-    }];
+    /*
+     checking if link contains info about next page
+     */
+    if (page == 1 || [restaurantsListInteractor.restaurantsLoadingLink containsString:[NSString stringWithFormat:@"page=%li", (long)page]]) {
+        [restaurantsListInteractor getRestaurantsForRegion:region andPage:page complete:^(NSArray *restaurants) {
+            [self.delegate didGetRestaurants:restaurants];
+        }];
+    }
 }
 
 @end

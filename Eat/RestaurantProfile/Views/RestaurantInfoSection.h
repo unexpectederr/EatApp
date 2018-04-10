@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface RestaurantInfoSection : UIView
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *restaurnatInfoCollectionViewHeight;
+
+@property (weak, nonatomic) IBOutlet UICollectionView *restaurantInfoCollectionView;
+
+- (void)setUpCollectionView:(NSArray<NSString*>*)infos;
 
 @end

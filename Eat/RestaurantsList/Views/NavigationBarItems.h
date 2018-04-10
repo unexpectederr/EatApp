@@ -17,6 +17,7 @@
 
 @interface NavigationBarItems : UIView
 
+@property (weak, nonatomic) IBOutlet UIButton *mainViewSwitchButton;
 @property (weak, nonatomic) id<NavigationItemProtocol> delegate;
 
 @end
