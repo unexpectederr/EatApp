@@ -481,7 +481,6 @@
 				AFD29C992079F228008AFF9F /* Sources */,
 				AFD29C9A2079F228008AFF9F /* Frameworks */,
 				AFD29C9B2079F228008AFF9F /* Resources */,
-				9DEFF328817E8D88CE76604A /* [CP] Embed Pods Frameworks */,
 				96D7AC7CD514153D18CF0618 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -565,26 +564,12 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Eat/Pods-Eat-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9DEFF328817E8D88CE76604A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Eat/Pods-Eat-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D16265C067338058B128D476 /* [CP] Check Pods Manifest.lock */ = {

@@ -55,6 +55,7 @@
         NSMutableArray *existingArray = [[NSMutableArray alloc] initWithArray:restaurantsArray];
         [existingArray addObjectsFromArray:restaurants];
         restaurantsArray = existingArray;
+        self.paginationLoader.hidden = NO;
         [_restaurantsCollectionView performBatchUpdates:^{
             NSMutableArray *indexesToReload = [NSMutableArray new];
             NSUInteger start = restaurantsArray.count - restaurants.count;
@@ -127,7 +128,7 @@
 
 - (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == restaurantsArray.count-1) {
-        self.paginationLoader.hidden = YES;
+        self.paginationLoader.hidden = NO;
         [restaurantsListPresenter getRestaurantsForRegion:_regionCode andPage:page];
     }
 }
