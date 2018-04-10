@@ -55,7 +55,7 @@
         NSMutableArray *existingArray = [[NSMutableArray alloc] initWithArray:restaurantsArray];
         [existingArray addObjectsFromArray:restaurants];
         restaurantsArray = existingArray;
-        self.paginationLoader.hidden = NO;
+        self.paginationLoader.hidden = YES;
         [_restaurantsCollectionView performBatchUpdates:^{
             NSMutableArray *indexesToReload = [NSMutableArray new];
             NSUInteger start = restaurantsArray.count - restaurants.count;
