@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SimilarRestaurantsSection">
+            <connections>
+                <outlet property="restaurantsCollectionView" destination="pK3-Qs-t7R" id="MEL-8M-Uw6"/>
+                <outlet property="sectionName" destination="Hek-FF-XbW" id="Vlu-yk-5hH"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="231"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SIMILAR RESTAURANTS BY CUSINE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hek-FF-XbW">
+                    <rect key="frame" x="15" y="0.0" width="204" height="36"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.52735000889999994" green="0.54088673860000003" blue="0.52411777729999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="pK3-Qs-t7R">
+                    <rect key="frame" x="0.0" y="41" width="375" height="190"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="190" id="Tdw-Tu-XaH"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ih8-JE-xke">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="3" minY="0.0" maxX="3" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="hrB-bB-KIU"/>
+                        <outlet property="delegate" destination="-1" id="WOl-Ub-6XE"/>
+                    </connections>
+                </collectionView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="pK3-Qs-t7R" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="01m-4R-XEN"/>
+                <constraint firstItem="pK3-Qs-t7R" firstAttribute="top" secondItem="Hek-FF-XbW" secondAttribute="bottom" constant="5" id="8XG-Cz-qzP"/>
+                <constraint firstItem="Hek-FF-XbW" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="PmC-Kj-LPR"/>
+                <constraint firstItem="Hek-FF-XbW" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="V5F-MV-PBl"/>
+                <constraint firstItem="pK3-Qs-t7R" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="heZ-pq-NVS"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="pK3-Qs-t7R" secondAttribute="trailing" id="vBE-OI-6GA"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="34.5" y="-170.5"/>
+        </view>
+    </objects>
+</document>
