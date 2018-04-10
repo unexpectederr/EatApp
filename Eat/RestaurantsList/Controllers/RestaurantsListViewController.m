@@ -127,7 +127,7 @@
 
 - (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == restaurantsArray.count-1) {
-        self.paginationLoader.hidden = NO;
+        self.paginationLoader.hidden = YES;
         [restaurantsListPresenter getRestaurantsForRegion:_regionCode andPage:page];
     }
 }
