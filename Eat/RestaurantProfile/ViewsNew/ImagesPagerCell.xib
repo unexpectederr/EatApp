@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="imagesPagerCell" rowHeight="306" id="KGk-i7-Jjw" customClass="ImagesPagerCell">
+            <rect key="frame" x="0.0" y="0.0" width="584" height="306"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="584" height="305.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="PjB-hF-fx3">
+                        <rect key="frame" x="0.0" y="0.0" width="584" height="240"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="240" id="AjZ-r6-gDV"/>
+                        </constraints>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="eU7-wy-Ej9">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <connections>
+                            <outlet property="dataSource" destination="KGk-i7-Jjw" id="q7Y-ZK-YPb"/>
+                            <outlet property="delegate" destination="KGk-i7-Jjw" id="Fw7-Yk-asA"/>
+                        </connections>
+                    </collectionView>
+                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="lGZ-nx-Pzk">
+                        <rect key="frame" x="0.0" y="203" width="584" height="37"/>
+                    </pageControl>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hd1-Wj-FoQ">
+                        <rect key="frame" x="0.0" y="240" width="584" height="65.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="PjB-hF-fx3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="7Gs-X6-41t"/>
+                    <constraint firstItem="hd1-Wj-FoQ" firstAttribute="top" secondItem="lGZ-nx-Pzk" secondAttribute="bottom" id="FgB-wb-Yft"/>
+                    <constraint firstItem="hd1-Wj-FoQ" firstAttribute="top" secondItem="PjB-hF-fx3" secondAttribute="bottom" id="HFO-co-kDi"/>
+                    <constraint firstItem="PjB-hF-fx3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Lo2-cf-aeZ"/>
+                    <constraint firstItem="lGZ-nx-Pzk" firstAttribute="bottom" secondItem="PjB-hF-fx3" secondAttribute="bottom" id="NQe-2D-V7q"/>
+                    <constraint firstAttribute="trailing" secondItem="lGZ-nx-Pzk" secondAttribute="trailing" id="U6L-2h-gMa"/>
+                    <constraint firstItem="lGZ-nx-Pzk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="bHc-bj-hf4"/>
+                    <constraint firstAttribute="bottom" secondItem="hd1-Wj-FoQ" secondAttribute="bottom" id="iVj-cI-leA"/>
+                    <constraint firstAttribute="trailing" secondItem="PjB-hF-fx3" secondAttribute="trailing" id="jBA-qm-YAd"/>
+                    <constraint firstItem="hd1-Wj-FoQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="kKb-8D-hnj"/>
+                    <constraint firstAttribute="trailing" secondItem="hd1-Wj-FoQ" secondAttribute="trailing" id="ntY-GG-2Io"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="collectionView" destination="PjB-hF-fx3" id="gFg-L3-xJY"/>
+                <outlet property="pageControl" destination="lGZ-nx-Pzk" id="0NY-nU-V0U"/>
+            </connections>
+            <point key="canvasLocation" x="-144" y="232"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="restaurantInfoCell" rowHeight="446" id="KGk-i7-Jjw" customClass="RestaurantInfoCell">
+            <rect key="frame" x="0.0" y="0.0" width="566" height="446"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="566" height="445.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="0Wr-yn-S3I">
+                        <rect key="frame" x="10" y="72" width="546" height="363.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="363.5" id="Eeu-Oo-Kyj"/>
+                        </constraints>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Xte-6s-RJ0">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
+                        </collectionViewFlowLayout>
+                        <connections>
+                            <outlet property="dataSource" destination="KGk-i7-Jjw" id="qf6-p8-utS"/>
+                            <outlet property="delegate" destination="KGk-i7-Jjw" id="dic-Hg-N9f"/>
+                        </connections>
+                    </collectionView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="RESTAURANT INFO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9PD-7I-s7G">
+                        <rect key="frame" x="25" y="21" width="110.5" height="41"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.52735000889999994" green="0.54088673860000003" blue="0.52411777729999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="0Wr-yn-S3I" secondAttribute="trailing" constant="10" id="4kl-O8-haO"/>
+                    <constraint firstItem="9PD-7I-s7G" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="5CP-dR-t0f"/>
+                    <constraint firstItem="0Wr-yn-S3I" firstAttribute="top" secondItem="9PD-7I-s7G" secondAttribute="bottom" constant="10" id="Kfv-nR-WvF"/>
+                    <constraint firstAttribute="bottom" secondItem="0Wr-yn-S3I" secondAttribute="bottom" constant="10" id="M5j-KY-r5T"/>
+                    <constraint firstItem="0Wr-yn-S3I" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="QR6-bt-z9e"/>
+                    <constraint firstItem="9PD-7I-s7G" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="5" id="rtB-8d-GlR"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="restaurantInfoCollectionView" destination="0Wr-yn-S3I" id="DRN-PZ-I5b"/>
+                <outlet property="restaurnatInfoCollectionViewHeight" destination="Eeu-Oo-Kyj" id="nsx-TL-N8z"/>
+            </connections>
+            <point key="canvasLocation" x="44" y="255"/>
+        </tableViewCell>
+    </objects>
+</document>

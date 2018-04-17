@@ -176,6 +176,40 @@
             </objects>
             <point key="canvasLocation" x="2019" y="697"/>
         </scene>
+        <!--Restaurant Detail View Controller-->
+        <scene sceneID="Qv7-Qq-jlN">
+            <objects>
+                <viewController storyboardIdentifier="RestaurantDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MNj-HZ-uwC" customClass="RestaurantDetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kfC-JH-Cb9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pfg-yc-DqM">
+                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
+                                <color key="backgroundColor" red="0.97647058823529409" green="0.98039215686274506" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="MNj-HZ-uwC" id="bTQ-OM-FYc"/>
+                                    <outlet property="delegate" destination="MNj-HZ-uwC" id="uBf-ZP-N11"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="sx0-Cc-VOX" firstAttribute="bottom" secondItem="Pfg-yc-DqM" secondAttribute="bottom" id="UdO-Bi-LQa"/>
+                            <constraint firstItem="Pfg-yc-DqM" firstAttribute="top" secondItem="sx0-Cc-VOX" secondAttribute="top" id="VcF-Uq-LZq"/>
+                            <constraint firstItem="Pfg-yc-DqM" firstAttribute="leading" secondItem="sx0-Cc-VOX" secondAttribute="leading" id="dkk-Bf-lOP"/>
+                            <constraint firstItem="sx0-Cc-VOX" firstAttribute="trailing" secondItem="Pfg-yc-DqM" secondAttribute="trailing" id="gfh-bS-pgq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="sx0-Cc-VOX"/>
+                    </view>
+                    <connections>
+                        <outlet property="detailsTableView" destination="Pfg-yc-DqM" id="Daa-Ju-NE0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xld-yQ-o8Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2780" y="-671"/>
+        </scene>
         <!--Restaurant Details View Controller-->
         <scene sceneID="4qc-jV-ndw">
             <objects>

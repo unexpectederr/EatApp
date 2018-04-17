@@ -1,8 +1,8 @@
 //
-//  GenericSectionCollectionCell.h
+//  GenericSectionCell.h
 //  Eat
 //
-//  Created by Haris Muharemovic on 16/04/2018.
+//  Created by Haris Muharemovic on 17/04/2018.
 //  Copyright © 2018 Haris Muharemovic. All rights reserved.
 //
 
@@ -14,10 +14,8 @@
 - (void)didOpenTripAdvisorReviews;
 
 @end
+@interface GenericSectionCell : UITableViewCell
 
-@interface GenericSectionCollectionCell : UICollectionViewCell
-
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *widthConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *collectionViewHeightConstraint;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) id<GenericSectionCollectionCellProtocol> delegate;

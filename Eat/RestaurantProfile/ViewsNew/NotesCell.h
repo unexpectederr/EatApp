@@ -1,8 +1,8 @@
 //
-//  NotesCollectionCell.h
+//  NotesCell.h
 //  Eat
 //
-//  Created by Haris Muharemovic on 16/04/2018.
+//  Created by Haris Muharemovic on 17/04/2018.
 //  Copyright © 2018 Haris Muharemovic. All rights reserved.
 //
 
@@ -15,12 +15,11 @@
 
 @end
 
-@interface NotesCollectionCell : UICollectionViewCell
+@interface NotesCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *widthConstraint;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *readMoreBtnConstraint;
 @property (weak, nonatomic) IBOutlet UILabel *note;
 @property (weak, nonatomic) IBOutlet UIButton *readMoreBtn;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *readMoreBtnConstraint;
 @property (weak, nonatomic) id<NotesSectionProtocol> delegate;
 
 - (void)buildCell:(RestaurantModel*)restaurant;

@@ -1,22 +1,20 @@
 //
-//  ImagePagerCollectionCell.m
+//  ImagesPagerCellTableViewCell.m
 //  Eat
 //
-//  Created by Haris Muharemovic on 16/04/2018.
+//  Created by Haris Muharemovic on 17/04/2018.
 //  Copyright © 2018 Haris Muharemovic. All rights reserved.
 //
 
-#import "ImagePagerCollectionCell.h"
+#import "ImagesPagerCell.h"
 #import "ImageItemCollectionViewCell.h"
 
-@implementation ImagePagerCollectionCell {
+@implementation ImagesPagerCell {
     NSMutableArray *imageUrls;
 }
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.contentView.translatesAutoresizingMaskIntoConstraints = NO;
-    _widthConstraint.constant = UIScreen.mainScreen.bounds.size.width;
 }
 
 - (void)buildCell:(RestaurantModel*)restaurant {
@@ -24,7 +22,7 @@
     [_collectionView registerNib:[UINib nibWithNibName:@"ImageItemCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"imageItemCollectionViewCell"];
     
     _pageControl.numberOfPages = restaurant.image_urls.count;
-   
+    
     imageUrls = [[NSMutableArray alloc] init];
     
     if (![restaurant.image_urls containsObject:restaurant.image_url])
@@ -58,6 +56,12 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     return CGSizeMake(self.contentView.bounds.size.width, self.collectionView.bounds.size.height);
+}
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+
+    // Configure the view for the selected state
 }
 
 @end

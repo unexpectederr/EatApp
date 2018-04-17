@@ -1,27 +1,26 @@
 //
-//  SimilarRestaurnatsCollectionCell.m
+//  SimilarRestaurantsCell.m
 //  Eat
 //
-//  Created by Haris Muharemovic on 16/04/2018.
+//  Created by Haris Muharemovic on 17/04/2018.
 //  Copyright © 2018 Haris Muharemovic. All rights reserved.
 //
 
-#import "SimilarRestaurnatsCollectionCell.h"
+#import "SimilarRestaurantsCell.h"
 #import "RestaurantSmallCollectionViewCell.h"
 #import "UIHelper.h"
 
 static const int restaurantCellWidth = 140;
 
-@implementation SimilarRestaurnatsCollectionCell{
+@implementation SimilarRestaurantsCell{
     NSArray *restaurantsArray;
 }
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.contentView.translatesAutoresizingMaskIntoConstraints = NO;
-    _widthConstraint.constant = UIScreen.mainScreen.bounds.size.width;
-    
     self.restaurantsCollectionView.backgroundColor = [UIColor colorWithCGColor:[UIHelper colorFromHexString:@"#F9FAFC"].CGColor];
+    self.backgroundColor = [UIColor clearColor];
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
 - (void)buildCell:(NSArray*)restaurants sectionName:(NSString*)name {

@@ -1,12 +1,12 @@
 //
-//  GenericSectionCollectionCell.m
+//  GenericSectionCell.m
 //  Eat
 //
-//  Created by Haris Muharemovic on 16/04/2018.
+//  Created by Haris Muharemovic on 17/04/2018.
 //  Copyright © 2018 Haris Muharemovic. All rights reserved.
 //
 
-#import "GenericSectionCollectionCell.h"
+#import "GenericSectionCell.h"
 #import "GenericSectionItemModel.h"
 #import "UIHelper.h"
 #import "GenericSectionItemCollectionViewCell.h"
@@ -14,19 +14,19 @@
 
 static const int sectionItemHeight = 50;
 
-@implementation GenericSectionCollectionCell {
+@implementation GenericSectionCell{
     NSMutableArray<GenericSectionItemModel*>* itemsArray;
 }
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.contentView.translatesAutoresizingMaskIntoConstraints = NO;
-    _widthConstraint.constant = UIScreen.mainScreen.bounds.size.width - 20;
-    
+   
     self.collectionView.layer.borderWidth = 1.0f;
     self.collectionView.layer.borderColor = [UIColor colorWithCGColor:[UIHelper colorFromHexString:@"#e8e8e8"].CGColor].CGColor;
     self.collectionView.layer.cornerRadius = 3.0f;
     self.collectionView.layer.masksToBounds = YES;
+    self.backgroundColor = [UIColor clearColor];
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
 - (void)buildCell:(RestaurantModel*)restaurant sectionType:(int)type {
@@ -100,7 +100,7 @@ static const int sectionItemHeight = 50;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake(self.bounds.size.width, sectionItemHeight);
+    return CGSizeMake(self.collectionView.bounds.size.width, sectionItemHeight);
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
