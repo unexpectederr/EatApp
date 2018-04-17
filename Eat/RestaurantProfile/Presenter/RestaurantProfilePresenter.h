@@ -10,8 +10,8 @@
 
 @protocol RestaurantProfilePresenterProtocol
 
-- (void)didGetRestaurantsByCuisine:(NSArray*)restaurants;
-- (void)didGetRestaurantsByNeighbourhood:(NSArray*)restaurants;
+- (void)showRestaurantsByCuisine:(NSArray*)restaurants;
+- (void)showRestaurantsByNeighbourhood:(NSArray*)restaurants;
 
 @end
 

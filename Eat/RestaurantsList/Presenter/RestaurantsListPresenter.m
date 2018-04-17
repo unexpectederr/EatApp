@@ -25,13 +25,28 @@
 
 - (void)getRestaurantsForRegion:(NSString*)region andPage:(NSInteger)page {
 
-    /*
-     checking if link contains info about next page
-     */
+    __weak typeof(self) welf = self;
+
     if (page == 1 || [restaurantsListInteractor.restaurantsLoadingLink containsString:[NSString stringWithFormat:@"page=%li", (long)page]]) {
+        
         [restaurantsListInteractor getRestaurantsForRegion:region andPage:page complete:^(NSArray *restaurants) {
-            [self.delegate didGetRestaurants:restaurants];
+           
+            if (restaurants.count) {
+                
+                if (page > 1) {
+                    [welf.delegate addNewSetOfRestaurnats:restaurants];
+                } else {
+                    [welf.delegate showRestaurantsList:restaurants];
+                }
+            } else {
+                [welf.delegate showEmptyContainer];
+            }
         }];
+        
+    } else if (page > 1 && !restaurantsListInteractor.restaurantsLoadingLink) {
+        
+        [welf.delegate removeLoadingItem];
+        
     }
 }
 

@@ -10,10 +10,10 @@
 
 @interface RegionModel : JSONModel
 
-@property (strong, nonatomic) NSString* id;
-@property (strong, nonatomic) NSString* key;
-@property (strong, nonatomic) NSString* name;
-@property (strong, nonatomic) NSString* country_code;
-@property (strong, nonatomic) NSString* image_url;
+@property (copy, nonatomic) NSString* id;
+@property (copy, nonatomic) NSString* key;
+@property (copy, nonatomic) NSString* name;
+@property (copy, nonatomic) NSString* country_code;
+@property (copy, nonatomic) NSString* image_url;
 
 @end

@@ -10,28 +10,40 @@
 		3460A2877879EF9D7F984C53 /* libPods-Eat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A3C7477C6AB852E177639B7 /* libPods-Eat.a */; };
 		AF578F87207B7CD800CF6190 /* NavigationBarItems.m in Sources */ = {isa = PBXBuildFile; fileRef = AF578F86207B7CD800CF6190 /* NavigationBarItems.m */; };
 		AF578F89207B7D1000CF6190 /* NavigationBarItems.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF578F88207B7D1000CF6190 /* NavigationBarItems.xib */; };
-		AF7EF27F207B8B58003C56BD /* RestaurantsMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = AF7EF27E207B8B58003C56BD /* RestaurantsMapView.m */; };
-		AF7EF281207B8C16003C56BD /* RestaurantsMapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF7EF280207B8C16003C56BD /* RestaurantsMapView.xib */; };
+		AF69CB1A2084E8EC00264545 /* SimilarRestaurnatsCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AF69CB182084E8EC00264545 /* SimilarRestaurnatsCollectionCell.m */; };
+		AF69CB1B2084E8EC00264545 /* SimilarRestaurnatsCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF69CB192084E8EC00264545 /* SimilarRestaurnatsCollectionCell.xib */; };
+		AF69CB1F2084EBDA00264545 /* ImagePagerCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AF69CB1D2084EBDA00264545 /* ImagePagerCollectionCell.m */; };
+		AF69CB202084EBDA00264545 /* ImagePagerCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF69CB1E2084EBDA00264545 /* ImagePagerCollectionCell.xib */; };
+		AF7EF27F207B8B58003C56BD /* RestaurantsMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF7EF27E207B8B58003C56BD /* RestaurantsMapViewController.m */; };
 		AF7EF284207B99C5003C56BD /* MarkerInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = AF7EF283207B99C5003C56BD /* MarkerInfoView.m */; };
 		AF7EF287207B9A0E003C56BD /* RestaurantMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = AF7EF286207B9A0E003C56BD /* RestaurantMarker.m */; };
 		AF7EF289207B9ACC003C56BD /* MarkerInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF7EF288207B9ACC003C56BD /* MarkerInfoView.xib */; };
 		AF7EF28E207CA1EB003C56BD /* RestaurantProfilePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = AF7EF28D207CA1EB003C56BD /* RestaurantProfilePresenter.m */; };
 		AF7EF291207CA203003C56BD /* RestaurantProfileInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = AF7EF290207CA203003C56BD /* RestaurantProfileInteractor.m */; };
-		AF7EF294207CA5BC003C56BD /* SimilarRestaurantsSection.m in Sources */ = {isa = PBXBuildFile; fileRef = AF7EF293207CA5BC003C56BD /* SimilarRestaurantsSection.m */; };
-		AF7EF296207CA5C6003C56BD /* SimilarRestaurantsSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF7EF295207CA5C6003C56BD /* SimilarRestaurantsSection.xib */; };
 		AF7EF29A207CA89F003C56BD /* RestaurantSmallCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AF7EF298207CA89F003C56BD /* RestaurantSmallCollectionViewCell.m */; };
 		AF7EF29B207CA89F003C56BD /* RestaurantSmallCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF7EF299207CA89F003C56BD /* RestaurantSmallCollectionViewCell.xib */; };
 		AF85677A207CDEB300143BCD /* TripAdvisorReviewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF856779207CDEB300143BCD /* TripAdvisorReviewsViewController.m */; };
 		AF856787207CEE7F00143BCD /* TripAdvisorRevCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AF856785207CEE7F00143BCD /* TripAdvisorRevCollectionViewCell.m */; };
 		AF856788207CEE7F00143BCD /* TripAdvisorRevCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF856786207CEE7F00143BCD /* TripAdvisorRevCollectionViewCell.xib */; };
-		AF912A76207B4F6C009463BC /* RestaurantInfoSection.m in Sources */ = {isa = PBXBuildFile; fileRef = AF912A75207B4F6C009463BC /* RestaurantInfoSection.m */; };
-		AF912A7A207B4F9C009463BC /* RestaurantInfoSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF912A79207B4F9C009463BC /* RestaurantInfoSection.xib */; };
-		AF912A7E207B5124009463BC /* RestaurantInfoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AF912A7C207B5124009463BC /* RestaurantInfoCollectionViewCell.m */; };
-		AF912A7F207B5124009463BC /* RestaurantInfoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF912A7D207B5124009463BC /* RestaurantInfoCollectionViewCell.xib */; };
-		AF912A82207B5EED009463BC /* NotesSection.m in Sources */ = {isa = PBXBuildFile; fileRef = AF912A81207B5EED009463BC /* NotesSection.m */; };
-		AF912A84207B5F29009463BC /* NotesSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF912A83207B5F29009463BC /* NotesSection.xib */; };
-		AFAB581F207A825800146983 /* RestaurantSectionTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = AFAB581E207A825800146983 /* RestaurantSectionTwo.m */; };
-		AFAB5821207A827400146983 /* RestaurantSectionTwo.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFAB5820207A827400146983 /* RestaurantSectionTwo.xib */; };
+		AF8CD36020837F1600F18173 /* LoaderCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF8CD35E20837F1600F18173 /* LoaderCollectionViewCell.xib */; };
+		AF8CD3632083CDBF00F18173 /* ImageLoadingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AF8CD3622083CDBF00F18173 /* ImageLoadingManager.m */; };
+		AF8CD3662083DB0300F18173 /* EatImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = AF8CD3652083DB0300F18173 /* EatImageView.m */; };
+		AF8CD3692083F2FE00F18173 /* RestaurantDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF8CD3682083F2FE00F18173 /* RestaurantDetailsViewController.m */; };
+		AF8CD3722083FBC500F18173 /* RestaurantInfoCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AF8CD3702083FBC500F18173 /* RestaurantInfoCollectionCell.m */; };
+		AF8CD3732083FBC500F18173 /* RestaurantInfoCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF8CD3712083FBC500F18173 /* RestaurantInfoCollectionCell.xib */; };
+		AF8CD3772084ACB000F18173 /* GenericSectionItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AF8CD3752084ACB000F18173 /* GenericSectionItemCollectionViewCell.m */; };
+		AF8CD3782084ACB000F18173 /* GenericSectionItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF8CD3762084ACB000F18173 /* GenericSectionItemCollectionViewCell.xib */; };
+		AF8CD37D2084AE5300F18173 /* GenericSectionCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AF8CD37B2084AE5300F18173 /* GenericSectionCollectionCell.m */; };
+		AF8CD37E2084AE5300F18173 /* GenericSectionCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF8CD37C2084AE5300F18173 /* GenericSectionCollectionCell.xib */; };
+		AF8CD3822084B02B00F18173 /* GenericSectionItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AF8CD3812084B02B00F18173 /* GenericSectionItemModel.m */; };
+		AF8CD38B2084C9D800F18173 /* NotesCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AF8CD3892084C9D800F18173 /* NotesCollectionCell.m */; };
+		AF8CD38C2084C9D800F18173 /* NotesCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF8CD38A2084C9D800F18173 /* NotesCollectionCell.xib */; };
+		AF912A7E207B5124009463BC /* RestaurantInfoItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AF912A7C207B5124009463BC /* RestaurantInfoItemCollectionViewCell.m */; };
+		AF912A7F207B5124009463BC /* RestaurantInfoItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF912A7D207B5124009463BC /* RestaurantInfoItemCollectionViewCell.xib */; };
+		AFAC50A320850661000ABF61 /* ImageItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AFAC50A120850661000ABF61 /* ImageItemCollectionViewCell.m */; };
+		AFAC50A420850661000ABF61 /* ImageItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFAC50A220850661000ABF61 /* ImageItemCollectionViewCell.xib */; };
+		AFAC50A820850F21000ABF61 /* BookNowCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AFAC50A620850F21000ABF61 /* BookNowCollectionCell.m */; };
+		AFAC50A920850F21000ABF61 /* BookNowCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFAC50A720850F21000ABF61 /* BookNowCollectionCell.xib */; };
 		AFD29CA22079F228008AFF9F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD29CA12079F228008AFF9F /* AppDelegate.m */; };
 		AFD29CA52079F228008AFF9F /* RegionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD29CA42079F228008AFF9F /* RegionsViewController.m */; };
 		AFD29CA82079F228008AFF9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFD29CA62079F228008AFF9F /* Main.storyboard */; };
@@ -54,11 +66,6 @@
 		AFD29CF4207A2394008AFF9F /* RatingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD29CF3207A2394008AFF9F /* RatingModel.m */; };
 		AFD29CF8207A35CA008AFF9F /* UIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD29CF7207A35CA008AFF9F /* UIHelper.m */; };
 		AFD29CFE207A3A91008AFF9F /* NSString+Repeat.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD29CFD207A3A91008AFF9F /* NSString+Repeat.m */; };
-		AFD29D03207A432E008AFF9F /* RestaurantProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD29D02207A432E008AFF9F /* RestaurantProfileViewController.m */; };
-		AFD29D07207A53B7008AFF9F /* ImagesPagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD29D06207A53B7008AFF9F /* ImagesPagerViewController.m */; };
-		AFD29D0A207A5FAC008AFF9F /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD29D09207A5FAC008AFF9F /* ImageViewController.m */; };
-		AFD29D0E207A71B1008AFF9F /* RestaurantSectionOne.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD29D0D207A71B1008AFF9F /* RestaurantSectionOne.m */; };
-		AFD29D10207A7228008AFF9F /* RestaurantSectionOne.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFD29D0F207A7228008AFF9F /* RestaurantSectionOne.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,9 +75,14 @@
 		AF578F85207B7CD800CF6190 /* NavigationBarItems.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationBarItems.h; sourceTree = "<group>"; };
 		AF578F86207B7CD800CF6190 /* NavigationBarItems.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationBarItems.m; sourceTree = "<group>"; };
 		AF578F88207B7D1000CF6190 /* NavigationBarItems.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationBarItems.xib; sourceTree = "<group>"; };
-		AF7EF27D207B8B58003C56BD /* RestaurantsMapView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RestaurantsMapView.h; sourceTree = "<group>"; };
-		AF7EF27E207B8B58003C56BD /* RestaurantsMapView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RestaurantsMapView.m; sourceTree = "<group>"; };
-		AF7EF280207B8C16003C56BD /* RestaurantsMapView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantsMapView.xib; sourceTree = "<group>"; };
+		AF69CB172084E8EC00264545 /* SimilarRestaurnatsCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimilarRestaurnatsCollectionCell.h; sourceTree = "<group>"; };
+		AF69CB182084E8EC00264545 /* SimilarRestaurnatsCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimilarRestaurnatsCollectionCell.m; sourceTree = "<group>"; };
+		AF69CB192084E8EC00264545 /* SimilarRestaurnatsCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SimilarRestaurnatsCollectionCell.xib; sourceTree = "<group>"; };
+		AF69CB1C2084EBDA00264545 /* ImagePagerCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImagePagerCollectionCell.h; sourceTree = "<group>"; };
+		AF69CB1D2084EBDA00264545 /* ImagePagerCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImagePagerCollectionCell.m; sourceTree = "<group>"; };
+		AF69CB1E2084EBDA00264545 /* ImagePagerCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImagePagerCollectionCell.xib; sourceTree = "<group>"; };
+		AF7EF27D207B8B58003C56BD /* RestaurantsMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RestaurantsMapViewController.h; sourceTree = "<group>"; };
+		AF7EF27E207B8B58003C56BD /* RestaurantsMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RestaurantsMapViewController.m; sourceTree = "<group>"; };
 		AF7EF282207B99C5003C56BD /* MarkerInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarkerInfoView.h; sourceTree = "<group>"; };
 		AF7EF283207B99C5003C56BD /* MarkerInfoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarkerInfoView.m; sourceTree = "<group>"; };
 		AF7EF285207B9A0E003C56BD /* RestaurantMarker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RestaurantMarker.h; sourceTree = "<group>"; };
@@ -80,9 +92,6 @@
 		AF7EF28D207CA1EB003C56BD /* RestaurantProfilePresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RestaurantProfilePresenter.m; sourceTree = "<group>"; };
 		AF7EF28F207CA203003C56BD /* RestaurantProfileInteractor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RestaurantProfileInteractor.h; sourceTree = "<group>"; };
 		AF7EF290207CA203003C56BD /* RestaurantProfileInteractor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RestaurantProfileInteractor.m; sourceTree = "<group>"; };
-		AF7EF292207CA5BC003C56BD /* SimilarRestaurantsSection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimilarRestaurantsSection.h; sourceTree = "<group>"; };
-		AF7EF293207CA5BC003C56BD /* SimilarRestaurantsSection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimilarRestaurantsSection.m; sourceTree = "<group>"; };
-		AF7EF295207CA5C6003C56BD /* SimilarRestaurantsSection.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SimilarRestaurantsSection.xib; sourceTree = "<group>"; };
 		AF7EF297207CA89F003C56BD /* RestaurantSmallCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RestaurantSmallCollectionViewCell.h; sourceTree = "<group>"; };
 		AF7EF298207CA89F003C56BD /* RestaurantSmallCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RestaurantSmallCollectionViewCell.m; sourceTree = "<group>"; };
 		AF7EF299207CA89F003C56BD /* RestaurantSmallCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantSmallCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -92,18 +101,36 @@
 		AF856785207CEE7F00143BCD /* TripAdvisorRevCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TripAdvisorRevCollectionViewCell.m; sourceTree = "<group>"; };
 		AF856786207CEE7F00143BCD /* TripAdvisorRevCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TripAdvisorRevCollectionViewCell.xib; sourceTree = "<group>"; };
 		AF856789207D143C00143BCD /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
-		AF912A74207B4F6C009463BC /* RestaurantInfoSection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RestaurantInfoSection.h; sourceTree = "<group>"; };
-		AF912A75207B4F6C009463BC /* RestaurantInfoSection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RestaurantInfoSection.m; sourceTree = "<group>"; };
-		AF912A79207B4F9C009463BC /* RestaurantInfoSection.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantInfoSection.xib; sourceTree = "<group>"; };
-		AF912A7B207B5124009463BC /* RestaurantInfoCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RestaurantInfoCollectionViewCell.h; sourceTree = "<group>"; };
-		AF912A7C207B5124009463BC /* RestaurantInfoCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RestaurantInfoCollectionViewCell.m; sourceTree = "<group>"; };
-		AF912A7D207B5124009463BC /* RestaurantInfoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantInfoCollectionViewCell.xib; sourceTree = "<group>"; };
-		AF912A80207B5EED009463BC /* NotesSection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotesSection.h; sourceTree = "<group>"; };
-		AF912A81207B5EED009463BC /* NotesSection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotesSection.m; sourceTree = "<group>"; };
-		AF912A83207B5F29009463BC /* NotesSection.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotesSection.xib; sourceTree = "<group>"; };
-		AFAB581D207A825800146983 /* RestaurantSectionTwo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RestaurantSectionTwo.h; sourceTree = "<group>"; };
-		AFAB581E207A825800146983 /* RestaurantSectionTwo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RestaurantSectionTwo.m; sourceTree = "<group>"; };
-		AFAB5820207A827400146983 /* RestaurantSectionTwo.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantSectionTwo.xib; sourceTree = "<group>"; };
+		AF8CD35E20837F1600F18173 /* LoaderCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoaderCollectionViewCell.xib; sourceTree = "<group>"; };
+		AF8CD3612083CDBF00F18173 /* ImageLoadingManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageLoadingManager.h; sourceTree = "<group>"; };
+		AF8CD3622083CDBF00F18173 /* ImageLoadingManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageLoadingManager.m; sourceTree = "<group>"; };
+		AF8CD3642083DB0300F18173 /* EatImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EatImageView.h; sourceTree = "<group>"; };
+		AF8CD3652083DB0300F18173 /* EatImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EatImageView.m; sourceTree = "<group>"; };
+		AF8CD3672083F2FE00F18173 /* RestaurantDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RestaurantDetailsViewController.h; sourceTree = "<group>"; };
+		AF8CD3682083F2FE00F18173 /* RestaurantDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RestaurantDetailsViewController.m; sourceTree = "<group>"; };
+		AF8CD36F2083FBC500F18173 /* RestaurantInfoCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RestaurantInfoCollectionCell.h; sourceTree = "<group>"; };
+		AF8CD3702083FBC500F18173 /* RestaurantInfoCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RestaurantInfoCollectionCell.m; sourceTree = "<group>"; };
+		AF8CD3712083FBC500F18173 /* RestaurantInfoCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantInfoCollectionCell.xib; sourceTree = "<group>"; };
+		AF8CD3742084ACB000F18173 /* GenericSectionItemCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GenericSectionItemCollectionViewCell.h; sourceTree = "<group>"; };
+		AF8CD3752084ACB000F18173 /* GenericSectionItemCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GenericSectionItemCollectionViewCell.m; sourceTree = "<group>"; };
+		AF8CD3762084ACB000F18173 /* GenericSectionItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenericSectionItemCollectionViewCell.xib; sourceTree = "<group>"; };
+		AF8CD37A2084AE5300F18173 /* GenericSectionCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GenericSectionCollectionCell.h; sourceTree = "<group>"; };
+		AF8CD37B2084AE5300F18173 /* GenericSectionCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GenericSectionCollectionCell.m; sourceTree = "<group>"; };
+		AF8CD37C2084AE5300F18173 /* GenericSectionCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenericSectionCollectionCell.xib; sourceTree = "<group>"; };
+		AF8CD3802084B02B00F18173 /* GenericSectionItemModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GenericSectionItemModel.h; sourceTree = "<group>"; };
+		AF8CD3812084B02B00F18173 /* GenericSectionItemModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GenericSectionItemModel.m; sourceTree = "<group>"; };
+		AF8CD3882084C9D800F18173 /* NotesCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotesCollectionCell.h; sourceTree = "<group>"; };
+		AF8CD3892084C9D800F18173 /* NotesCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotesCollectionCell.m; sourceTree = "<group>"; };
+		AF8CD38A2084C9D800F18173 /* NotesCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotesCollectionCell.xib; sourceTree = "<group>"; };
+		AF912A7B207B5124009463BC /* RestaurantInfoItemCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RestaurantInfoItemCollectionViewCell.h; sourceTree = "<group>"; };
+		AF912A7C207B5124009463BC /* RestaurantInfoItemCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RestaurantInfoItemCollectionViewCell.m; sourceTree = "<group>"; };
+		AF912A7D207B5124009463BC /* RestaurantInfoItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantInfoItemCollectionViewCell.xib; sourceTree = "<group>"; };
+		AFAC50A020850661000ABF61 /* ImageItemCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageItemCollectionViewCell.h; sourceTree = "<group>"; };
+		AFAC50A120850661000ABF61 /* ImageItemCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageItemCollectionViewCell.m; sourceTree = "<group>"; };
+		AFAC50A220850661000ABF61 /* ImageItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageItemCollectionViewCell.xib; sourceTree = "<group>"; };
+		AFAC50A520850F21000ABF61 /* BookNowCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookNowCollectionCell.h; sourceTree = "<group>"; };
+		AFAC50A620850F21000ABF61 /* BookNowCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookNowCollectionCell.m; sourceTree = "<group>"; };
+		AFAC50A720850F21000ABF61 /* BookNowCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookNowCollectionCell.xib; sourceTree = "<group>"; };
 		AFD29C9D2079F228008AFF9F /* Eat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFD29CA02079F228008AFF9F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AFD29CA12079F228008AFF9F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -143,15 +170,6 @@
 		AFD29CF7207A35CA008AFF9F /* UIHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIHelper.m; sourceTree = "<group>"; };
 		AFD29CFC207A3A90008AFF9F /* NSString+Repeat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Repeat.h"; sourceTree = "<group>"; };
 		AFD29CFD207A3A91008AFF9F /* NSString+Repeat.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Repeat.m"; sourceTree = "<group>"; };
-		AFD29D01207A432E008AFF9F /* RestaurantProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RestaurantProfileViewController.h; sourceTree = "<group>"; };
-		AFD29D02207A432E008AFF9F /* RestaurantProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RestaurantProfileViewController.m; sourceTree = "<group>"; };
-		AFD29D05207A53B7008AFF9F /* ImagesPagerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImagesPagerViewController.h; sourceTree = "<group>"; };
-		AFD29D06207A53B7008AFF9F /* ImagesPagerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImagesPagerViewController.m; sourceTree = "<group>"; };
-		AFD29D08207A5FAC008AFF9F /* ImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
-		AFD29D09207A5FAC008AFF9F /* ImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
-		AFD29D0C207A71B1008AFF9F /* RestaurantSectionOne.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RestaurantSectionOne.h; sourceTree = "<group>"; };
-		AFD29D0D207A71B1008AFF9F /* RestaurantSectionOne.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RestaurantSectionOne.m; sourceTree = "<group>"; };
-		AFD29D0F207A7228008AFF9F /* RestaurantSectionOne.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantSectionOne.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +245,53 @@
 				AF856786207CEE7F00143BCD /* TripAdvisorRevCollectionViewCell.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		AF8CD3792084AE1200F18173 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AF69CB1C2084EBDA00264545 /* ImagePagerCollectionCell.h */,
+				AF69CB1D2084EBDA00264545 /* ImagePagerCollectionCell.m */,
+				AF69CB1E2084EBDA00264545 /* ImagePagerCollectionCell.xib */,
+				AFAC50A020850661000ABF61 /* ImageItemCollectionViewCell.h */,
+				AFAC50A120850661000ABF61 /* ImageItemCollectionViewCell.m */,
+				AFAC50A220850661000ABF61 /* ImageItemCollectionViewCell.xib */,
+				AFAC50A520850F21000ABF61 /* BookNowCollectionCell.h */,
+				AFAC50A620850F21000ABF61 /* BookNowCollectionCell.m */,
+				AFAC50A720850F21000ABF61 /* BookNowCollectionCell.xib */,
+				AF8CD37A2084AE5300F18173 /* GenericSectionCollectionCell.h */,
+				AF8CD37B2084AE5300F18173 /* GenericSectionCollectionCell.m */,
+				AF8CD37C2084AE5300F18173 /* GenericSectionCollectionCell.xib */,
+				AF8CD3742084ACB000F18173 /* GenericSectionItemCollectionViewCell.h */,
+				AF8CD3752084ACB000F18173 /* GenericSectionItemCollectionViewCell.m */,
+				AF8CD3762084ACB000F18173 /* GenericSectionItemCollectionViewCell.xib */,
+				AF8CD36F2083FBC500F18173 /* RestaurantInfoCollectionCell.h */,
+				AF8CD3702083FBC500F18173 /* RestaurantInfoCollectionCell.m */,
+				AF8CD3712083FBC500F18173 /* RestaurantInfoCollectionCell.xib */,
+				AF912A7B207B5124009463BC /* RestaurantInfoItemCollectionViewCell.h */,
+				AF912A7C207B5124009463BC /* RestaurantInfoItemCollectionViewCell.m */,
+				AF912A7D207B5124009463BC /* RestaurantInfoItemCollectionViewCell.xib */,
+				AF8CD3882084C9D800F18173 /* NotesCollectionCell.h */,
+				AF8CD3892084C9D800F18173 /* NotesCollectionCell.m */,
+				AF8CD38A2084C9D800F18173 /* NotesCollectionCell.xib */,
+				AF69CB172084E8EC00264545 /* SimilarRestaurnatsCollectionCell.h */,
+				AF69CB182084E8EC00264545 /* SimilarRestaurnatsCollectionCell.m */,
+				AF69CB192084E8EC00264545 /* SimilarRestaurnatsCollectionCell.xib */,
+				AF7EF297207CA89F003C56BD /* RestaurantSmallCollectionViewCell.h */,
+				AF7EF298207CA89F003C56BD /* RestaurantSmallCollectionViewCell.m */,
+				AF7EF299207CA89F003C56BD /* RestaurantSmallCollectionViewCell.xib */,
+			);
+			name = Views;
+			path = ViewsNew;
+			sourceTree = "<group>";
+		};
+		AF8CD37F2084AFEC00F18173 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AF8CD3802084B02B00F18173 /* GenericSectionItemModel.h */,
+				AF8CD3812084B02B00F18173 /* GenericSectionItemModel.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		AFD29C942079F228008AFF9F = {
@@ -344,6 +409,8 @@
 			children = (
 				AFD29CD6207A0BD3008AFF9F /* RestaurantsListViewController.h */,
 				AFD29CD7207A0BD3008AFF9F /* RestaurantsListViewController.m */,
+				AF7EF27D207B8B58003C56BD /* RestaurantsMapViewController.h */,
+				AF7EF27E207B8B58003C56BD /* RestaurantsMapViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -378,9 +445,6 @@
 		AFD29CDD207A0E0D008AFF9F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				AF7EF27D207B8B58003C56BD /* RestaurantsMapView.h */,
-				AF7EF27E207B8B58003C56BD /* RestaurantsMapView.m */,
-				AF7EF280207B8C16003C56BD /* RestaurantsMapView.xib */,
 				AFD29CEA207A0F8D008AFF9F /* RestaurantCollectionViewCell.h */,
 				AFD29CEB207A0F8D008AFF9F /* RestaurantCollectionViewCell.m */,
 				AFD29CEC207A0F8D008AFF9F /* RestaurantCollectionViewCell.xib */,
@@ -392,6 +456,7 @@
 				AF7EF288207B9ACC003C56BD /* MarkerInfoView.xib */,
 				AF7EF285207B9A0E003C56BD /* RestaurantMarker.h */,
 				AF7EF286207B9A0E003C56BD /* RestaurantMarker.m */,
+				AF8CD35E20837F1600F18173 /* LoaderCollectionViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -403,6 +468,10 @@
 				AFD29CF7207A35CA008AFF9F /* UIHelper.m */,
 				AFD29CFC207A3A90008AFF9F /* NSString+Repeat.h */,
 				AFD29CFD207A3A91008AFF9F /* NSString+Repeat.m */,
+				AF8CD3612083CDBF00F18173 /* ImageLoadingManager.h */,
+				AF8CD3622083CDBF00F18173 /* ImageLoadingManager.m */,
+				AF8CD3642083DB0300F18173 /* EatImageView.h */,
+				AF8CD3652083DB0300F18173 /* EatImageView.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -413,7 +482,8 @@
 				AFD29D00207A4302008AFF9F /* Controllers */,
 				AF7EF28A207CA1AA003C56BD /* Presenter */,
 				AF7EF28B207CA1B8003C56BD /* Interactor */,
-				AFD29D0B207A712F008AFF9F /* Views */,
+				AF8CD3792084AE1200F18173 /* Views */,
+				AF8CD37F2084AFEC00F18173 /* Models */,
 			);
 			path = RestaurantProfile;
 			sourceTree = "<group>";
@@ -421,12 +491,8 @@
 		AFD29D00207A4302008AFF9F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				AFD29D01207A432E008AFF9F /* RestaurantProfileViewController.h */,
-				AFD29D02207A432E008AFF9F /* RestaurantProfileViewController.m */,
-				AFD29D05207A53B7008AFF9F /* ImagesPagerViewController.h */,
-				AFD29D06207A53B7008AFF9F /* ImagesPagerViewController.m */,
-				AFD29D08207A5FAC008AFF9F /* ImageViewController.h */,
-				AFD29D09207A5FAC008AFF9F /* ImageViewController.m */,
+				AF8CD3672083F2FE00F18173 /* RestaurantDetailsViewController.h */,
+				AF8CD3682083F2FE00F18173 /* RestaurantDetailsViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -440,34 +506,6 @@
 				AFD29CE8207A0F70008AFF9F /* RestaurantModel.m */,
 			);
 			path = CommonModels;
-			sourceTree = "<group>";
-		};
-		AFD29D0B207A712F008AFF9F /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				AFD29D0C207A71B1008AFF9F /* RestaurantSectionOne.h */,
-				AFD29D0D207A71B1008AFF9F /* RestaurantSectionOne.m */,
-				AFD29D0F207A7228008AFF9F /* RestaurantSectionOne.xib */,
-				AFAB581D207A825800146983 /* RestaurantSectionTwo.h */,
-				AFAB581E207A825800146983 /* RestaurantSectionTwo.m */,
-				AFAB5820207A827400146983 /* RestaurantSectionTwo.xib */,
-				AF912A74207B4F6C009463BC /* RestaurantInfoSection.h */,
-				AF912A75207B4F6C009463BC /* RestaurantInfoSection.m */,
-				AF912A79207B4F9C009463BC /* RestaurantInfoSection.xib */,
-				AF912A7B207B5124009463BC /* RestaurantInfoCollectionViewCell.h */,
-				AF912A7C207B5124009463BC /* RestaurantInfoCollectionViewCell.m */,
-				AF912A7D207B5124009463BC /* RestaurantInfoCollectionViewCell.xib */,
-				AF912A80207B5EED009463BC /* NotesSection.h */,
-				AF912A81207B5EED009463BC /* NotesSection.m */,
-				AF912A83207B5F29009463BC /* NotesSection.xib */,
-				AF7EF292207CA5BC003C56BD /* SimilarRestaurantsSection.h */,
-				AF7EF293207CA5BC003C56BD /* SimilarRestaurantsSection.m */,
-				AF7EF295207CA5C6003C56BD /* SimilarRestaurantsSection.xib */,
-				AF7EF297207CA89F003C56BD /* RestaurantSmallCollectionViewCell.h */,
-				AF7EF298207CA89F003C56BD /* RestaurantSmallCollectionViewCell.m */,
-				AF7EF299207CA89F003C56BD /* RestaurantSmallCollectionViewCell.xib */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -531,20 +569,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF856788207CEE7F00143BCD /* TripAdvisorRevCollectionViewCell.xib in Resources */,
+				AFAC50A420850661000ABF61 /* ImageItemCollectionViewCell.xib in Resources */,
+				AF8CD37E2084AE5300F18173 /* GenericSectionCollectionCell.xib in Resources */,
 				AFD29CD42079FEDE008AFF9F /* RegionCollectionViewCell.xib in Resources */,
-				AFD29D10207A7228008AFF9F /* RestaurantSectionOne.xib in Resources */,
 				AFD29CB02079F228008AFF9F /* LaunchScreen.storyboard in Resources */,
-				AF912A84207B5F29009463BC /* NotesSection.xib in Resources */,
-				AF7EF281207B8C16003C56BD /* RestaurantsMapView.xib in Resources */,
-				AF7EF296207CA5C6003C56BD /* SimilarRestaurantsSection.xib in Resources */,
+				AF8CD3782084ACB000F18173 /* GenericSectionItemCollectionViewCell.xib in Resources */,
+				AF8CD36020837F1600F18173 /* LoaderCollectionViewCell.xib in Resources */,
 				AF7EF289207B9ACC003C56BD /* MarkerInfoView.xib in Resources */,
 				AFD29CEE207A0F8D008AFF9F /* RestaurantCollectionViewCell.xib in Resources */,
-				AF912A7A207B4F9C009463BC /* RestaurantInfoSection.xib in Resources */,
 				AFD29CAD2079F228008AFF9F /* Assets.xcassets in Resources */,
+				AF69CB1B2084E8EC00264545 /* SimilarRestaurnatsCollectionCell.xib in Resources */,
+				AF69CB202084EBDA00264545 /* ImagePagerCollectionCell.xib in Resources */,
 				AFD29CA82079F228008AFF9F /* Main.storyboard in Resources */,
 				AF578F89207B7D1000CF6190 /* NavigationBarItems.xib in Resources */,
-				AFAB5821207A827400146983 /* RestaurantSectionTwo.xib in Resources */,
-				AF912A7F207B5124009463BC /* RestaurantInfoCollectionViewCell.xib in Resources */,
+				AF8CD3732083FBC500F18173 /* RestaurantInfoCollectionCell.xib in Resources */,
+				AF8CD38C2084C9D800F18173 /* NotesCollectionCell.xib in Resources */,
+				AFAC50A920850F21000ABF61 /* BookNowCollectionCell.xib in Resources */,
+				AF912A7F207B5124009463BC /* RestaurantInfoItemCollectionViewCell.xib in Resources */,
 				AF7EF29B207CA89F003C56BD /* RestaurantSmallCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -598,8 +639,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFD29CD32079FEDE008AFF9F /* RegionCollectionViewCell.m in Sources */,
-				AF7EF27F207B8B58003C56BD /* RestaurantsMapView.m in Sources */,
-				AFAB581F207A825800146983 /* RestaurantSectionTwo.m in Sources */,
+				AFAC50A820850F21000ABF61 /* BookNowCollectionCell.m in Sources */,
+				AF7EF27F207B8B58003C56BD /* RestaurantsMapViewController.m in Sources */,
+				AFAC50A320850661000ABF61 /* ImageItemCollectionViewCell.m in Sources */,
+				AF8CD3722083FBC500F18173 /* RestaurantInfoCollectionCell.m in Sources */,
 				AFD29CCC2079F99D008AFF9F /* RegionModel.m in Sources */,
 				AF7EF29A207CA89F003C56BD /* RestaurantSmallCollectionViewCell.m in Sources */,
 				AF7EF284207B99C5003C56BD /* MarkerInfoView.m in Sources */,
@@ -607,21 +650,23 @@
 				AF7EF291207CA203003C56BD /* RestaurantProfileInteractor.m in Sources */,
 				AF856787207CEE7F00143BCD /* TripAdvisorRevCollectionViewCell.m in Sources */,
 				AFD29CF8207A35CA008AFF9F /* UIHelper.m in Sources */,
-				AFD29D07207A53B7008AFF9F /* ImagesPagerViewController.m in Sources */,
 				AFD29CED207A0F8D008AFF9F /* RestaurantCollectionViewCell.m in Sources */,
+				AF8CD38B2084C9D800F18173 /* NotesCollectionCell.m in Sources */,
 				AF7EF287207B9A0E003C56BD /* RestaurantMarker.m in Sources */,
-				AF7EF294207CA5BC003C56BD /* SimilarRestaurantsSection.m in Sources */,
 				AFD29CE6207A0F56008AFF9F /* RestaurantsListInteractor.m in Sources */,
+				AF69CB1A2084E8EC00264545 /* SimilarRestaurnatsCollectionCell.m in Sources */,
 				AFD29CC52079F665008AFF9F /* RegionsInteractor.m in Sources */,
-				AFD29D03207A432E008AFF9F /* RestaurantProfileViewController.m in Sources */,
+				AF8CD3632083CDBF00F18173 /* ImageLoadingManager.m in Sources */,
+				AF8CD3772084ACB000F18173 /* GenericSectionItemCollectionViewCell.m in Sources */,
+				AF8CD3822084B02B00F18173 /* GenericSectionItemModel.m in Sources */,
 				AFD29CA52079F228008AFF9F /* RegionsViewController.m in Sources */,
-				AF912A82207B5EED009463BC /* NotesSection.m in Sources */,
-				AFD29D0A207A5FAC008AFF9F /* ImageViewController.m in Sources */,
-				AFD29D0E207A71B1008AFF9F /* RestaurantSectionOne.m in Sources */,
-				AF912A7E207B5124009463BC /* RestaurantInfoCollectionViewCell.m in Sources */,
+				AF8CD3662083DB0300F18173 /* EatImageView.m in Sources */,
+				AF8CD37D2084AE5300F18173 /* GenericSectionCollectionCell.m in Sources */,
+				AF912A7E207B5124009463BC /* RestaurantInfoItemCollectionViewCell.m in Sources */,
 				AFD29CAB2079F228008AFF9F /* Eat.xcdatamodeld in Sources */,
+				AF69CB1F2084EBDA00264545 /* ImagePagerCollectionCell.m in Sources */,
 				AFD29CB32079F228008AFF9F /* main.m in Sources */,
-				AF912A76207B4F6C009463BC /* RestaurantInfoSection.m in Sources */,
+				AF8CD3692083F2FE00F18173 /* RestaurantDetailsViewController.m in Sources */,
 				AF7EF28E207CA1EB003C56BD /* RestaurantProfilePresenter.m in Sources */,
 				AFD29CD8207A0BD3008AFF9F /* RestaurantsListViewController.m in Sources */,
 				AFD29CF4207A2394008AFF9F /* RatingModel.m in Sources */,
@@ -769,7 +814,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JTAG74X942;
 				INFOPLIST_FILE = Eat/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.digitalbath.eat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -785,7 +830,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JTAG74X942;
 				INFOPLIST_FILE = Eat/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.digitalbath.eat;
 				PRODUCT_NAME = "$(TARGET_NAME)";

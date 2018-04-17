@@ -26,22 +26,28 @@
 
 - (void)getRegions {
     
+    __weak typeof(self) welf = self;
+
     [regionsInteractor getRegions:^(NSArray *regions) {
-        [self.delegate didGetRegions:regions];
+        [welf.delegate showRegionsList:regions];
     }];
 }
 
 - (void)getCuisines {
     
+    __weak typeof(self) welf = self;
+
     [regionsInteractor getCuisines:^(id responseObject) {
-        [self.delegate didGetCuisines:responseObject];
+        [welf.delegate didGetCuisines:responseObject];
     }];
 }
 
 - (void)getNeigbourhoods {
     
+    __weak typeof(self) welf = self;
+
     [regionsInteractor getNeigbourhoods:^(id responseObject) {
-        [self.delegate didGetNeigbourhoods:responseObject];
+        [welf.delegate didGetNeigbourhoods:responseObject];
     }];
 }
 

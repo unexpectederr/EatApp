@@ -11,16 +11,10 @@
 @interface ReviewModel : JSONModel
 
 @property (assign, nonatomic) int rating;
-@property (strong, nonatomic) NSString* published_date;
-@property (strong, nonatomic) NSString* rating_image_url;
-@property (strong, nonatomic) NSString* url;
-@property (strong, nonatomic) NSString* text;
-@property (strong, nonatomic) NSString* title;
-//@property (strong, nonatomic) NSString*"user": {
-//    "username": "Anver Q",
-//    "user_location": {
-//        "name": "Swindon, United Kingdom",
-//        "id": "187049"
-//    }
-//},
+@property (copy, nonatomic) NSString* published_date;
+@property (copy, nonatomic) NSString* rating_image_url;
+@property (copy, nonatomic) NSString* url;
+@property (copy, nonatomic) NSString* text;
+@property (copy, nonatomic) NSString* title;
+
 @end

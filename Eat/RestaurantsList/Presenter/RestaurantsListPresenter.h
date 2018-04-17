@@ -10,7 +10,10 @@
 
 @protocol RestaurantsListPresenterProtocol
 
-- (void)didGetRestaurants:(NSArray*)restaurants;
+- (void)showRestaurantsList:(NSArray*)restaurants;
+- (void)addNewSetOfRestaurnats:(NSArray*)restaurants;
+- (void)showEmptyContainer;
+- (void)removeLoadingItem;
 
 @end
 

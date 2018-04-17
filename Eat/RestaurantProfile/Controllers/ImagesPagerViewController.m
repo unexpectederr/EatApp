@@ -18,13 +18,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.dataSource = self;
-    self.delegate = self;
-    
     ImageViewController *viewController = (ImageViewController*)[self viewControllerAtIndex:0];
     NSArray *viewControllers = [NSArray arrayWithObject:viewController];
     [self setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:nil completion:nil];
-    //self.currentView = viewController;
 }
 
 - (void)didReceiveMemoryWarning {

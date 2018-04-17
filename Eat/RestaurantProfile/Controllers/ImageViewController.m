@@ -8,6 +8,7 @@
 
 #import "ImageViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "ImageLoadingManager.h"
 
 @interface ImageViewController ()
 
@@ -17,7 +18,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.restaurantImage sd_setImageWithURL:[NSURL URLWithString:self.imageUrl] placeholderImage:nil];
+    [[ImageLoadingManager sharedInstance] loadImage:self.imageUrl withImageWidth:(int)self.restaurantImage.bounds.size.width withImageHeight:(int)self.restaurantImage.bounds.size.height complete:^(UIImage *image) {
+        self.restaurantImage.image = image;
+        self.restaurantImage.alpha = 0;
+        [UIView animateWithDuration:1.0f animations:^(void) {
+            self.restaurantImage.alpha = 1;
+        }];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

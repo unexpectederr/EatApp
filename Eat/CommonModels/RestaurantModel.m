@@ -12,4 +12,19 @@
 
 @synthesize description;
 
++ (BOOL)propertyIsOptional:(NSString*)propertyName {
+    if([propertyName isEqualToString:@"isLoadingItem"]) {
+        return YES;
+    }
+    return NO;
+}
+
+- (id)initLoadingItem {
+    if( self = [super init] )
+    {
+        _isLoadingItem = YES;
+    }
+    return self;
+}
+
 @end

@@ -22,6 +22,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "-[RestaurantCollectionViewCell prepareForReuse]:RestaurantCollectionViewCell.m">
+         <PersistentStrings>
+            <PersistentString
+               value = " self.restaurantImage">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[ImagesPagerViewController pageViewController:didFinishAnimating:previousViewControllers:transitionCompleted:]:ImagesPagerViewController.m">
          <PersistentStrings>
             <PersistentString
@@ -30,10 +38,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[RestaurantCollectionViewCell prepareForReuse]:RestaurantCollectionViewCell.m">
+         contextName = "-[RestaurantCollectionViewCell buildCell:]:RestaurantCollectionViewCell.m">
          <PersistentStrings>
             <PersistentString
-               value = " self.restaurantImage">
+               value = "self.restaurantImage.bounds.size.height">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -61,6 +69,14 @@
             </PersistentString>
             <PersistentString
                value = "[task allHeaderFields]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ImageViewController viewDidLoad]:ImageViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.restaurantImage.bounds.size">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -115,6 +131,25 @@
             </PersistentString>
             <PersistentString
                value = "self.note">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[RestaurantDetailsViewController collectionView:cellForItemAtIndexPath:]:RestaurantDetailsViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "GENERIC_SECTION_TYPE_ONE">
+            </PersistentString>
+            <PersistentString
+               value = "collectionItems[indexPath.row]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ImageItemCollectionViewCell buildCell:]:ImageItemCollectionViewCell.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.bounds.size.width">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

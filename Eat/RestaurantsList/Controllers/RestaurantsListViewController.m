@@ -7,28 +7,27 @@
 //
 
 #import "RestaurantsListViewController.h"
-#import "RestaurantProfileViewController.h"
+#import "RestaurantDetailsViewController.h"
 #import "RestaurantsListPresenter.h"
 #import "RestaurantCollectionViewCell.h"
 #import "RestaurantModel.h"
-#import "NavigationBarItems.h"
-#import "RestaurantsMapView.h"
+#import "RestaurantsMapViewController.h"
 #import "UIHelper.h"
 
-@interface RestaurantsListViewController () <RestaurantsListPresenterProtocol, NavigationItemProtocol, RestaurantsMapViewProtocol>
+@interface RestaurantsListViewController () <RestaurantsListPresenterProtocol, RestaurantsMapViewProtocol>
 
 @end
 
 @implementation RestaurantsListViewController {
 
-    NSArray *restaurantsArray;
-    int page;
+    NSMutableArray *restaurantsArray;
+    int currentPageLoaded;
     RestaurantsListPresenter *restaurantsListPresenter;
-    RestaurantsMapView *restaurantsMapView;
+    RestaurantsMapViewController *restaurantsMapView;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
 - (void)viewDidLoad {
@@ -37,67 +36,81 @@
     restaurantsListPresenter = [[RestaurantsListPresenter alloc] init];
     restaurantsListPresenter.delegate = self;
     
-    page = 1;
+    currentPageLoaded = 1;
     
-    [restaurantsListPresenter getRestaurantsForRegion:_regionCode andPage:page];
+    [restaurantsListPresenter getRestaurantsForRegion:_regionCode andPage:currentPageLoaded];
 
     [_restaurantsCollectionView registerNib:[UINib nibWithNibName:@"RestaurantCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"restaurantCollectionViewCell"];
     
-    self.paginationLoader.hidden = YES;
+    [_restaurantsCollectionView registerNib:[UINib nibWithNibName:@"LoaderCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"loaderCollectionViewCell"];
     
-    self.navigationBarItems.delegate = self;
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Map" style:UIBarButtonItemStylePlain target:self action:@selector(rightBarButtonItemPressed:)];
+
+}
+
+- (void)rightBarButtonItemPressed:(id)sender {
+    [self openMapView];
 }
 
 #pragma <RestaurantsListPresenterProtocol>
 
-- (void)didGetRestaurants:(NSArray *)restaurants{
-    if (restaurantsArray) {
-        NSMutableArray *existingArray = [[NSMutableArray alloc] initWithArray:restaurantsArray];
-        [existingArray addObjectsFromArray:restaurants];
-        restaurantsArray = existingArray;
-        self.paginationLoader.hidden = YES;
-        [_restaurantsCollectionView performBatchUpdates:^{
-            NSMutableArray *indexesToReload = [NSMutableArray new];
-            NSUInteger start = restaurantsArray.count - restaurants.count;
-            NSUInteger end = restaurantsArray.count;
-            for(NSUInteger i = start; i < end; i++){
-                [indexesToReload addObject:[NSIndexPath indexPathForRow:i inSection:0]];
-            }
-            [_restaurantsCollectionView insertItemsAtIndexPaths:indexesToReload];
-        } completion:^(BOOL finished) {}];
-    } else {
-        restaurantsArray = restaurants;
-        self.restaurantsCollectionView.hidden = NO;
-        self.navigationBarItems.hidden = NO;
-        self.restaurantsCollectionView.alpha = 0;
-        [UIView animateWithDuration:1.0 animations:^(void) {
-            self.restaurantsCollectionView.alpha = 1;
-        }];
-        [_restaurantsCollectionView reloadData];
-    }
-    page++;
-}
-
-#pragma <NavigationItemProtocol>
-
--(void)didSwitchMainView {
-    if (restaurantsMapView) {
-        [self.navigationBarItems.mainViewSwitchButton setTitle:@"MAP VIEW" forState:UIControlStateNormal];
-        [restaurantsMapView removeFromSuperview];
-        restaurantsMapView = nil;
-    } else {
-        restaurantsMapView = [[RestaurantsMapView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height) andRestaurnatsList:restaurantsArray];
-        restaurantsMapView.delegate = self;
-        [self.view insertSubview:restaurantsMapView atIndex:2];
-        [self.navigationBarItems.mainViewSwitchButton setTitle:@"RESTAURANTS" forState:UIControlStateNormal];
-    }
-}
-
--(void)didClickFiltersBtn {
+- (void)showEmptyContainer {
     
+    self.restaurantsCollectionView.hidden = YES;
+    self.emptyListMessage.hidden = NO;
+    self.loadingIndicator.hidden = YES;
 }
 
-#pragma <UICollectionViewDelegate>
+- (void)showRestaurantsList:(NSArray *)restaurants {
+    
+    restaurantsArray = [NSMutableArray arrayWithArray:restaurants];
+    [restaurantsArray addObject:[[RestaurantModel alloc] initLoadingItem]];
+    self.restaurantsCollectionView.hidden = NO;
+    self.loadingIndicator.hidden = YES;
+    [_restaurantsCollectionView reloadData];
+    currentPageLoaded++;
+}
+
+- (void)addNewSetOfRestaurnats:(NSArray *)restaurants {
+    
+    [restaurantsArray addObjectsFromArray:restaurants];
+    [restaurantsArray addObject:[[RestaurantModel alloc] initLoadingItem]];
+   
+    [_restaurantsCollectionView performBatchUpdates:^{
+        
+        NSMutableArray *indexesToReload = [NSMutableArray new];
+        NSUInteger start = restaurantsArray.count - restaurants.count - 1;
+        NSUInteger end = restaurantsArray.count;
+        for(NSUInteger i = start; i < end; i++){
+            [indexesToReload addObject:[NSIndexPath indexPathForRow:i inSection:0]];
+        }
+        
+        [_restaurantsCollectionView insertItemsAtIndexPaths:indexesToReload];
+  
+    } completion:^(BOOL finished) {
+        [self removeLoadingItem];
+    }];
+    
+    currentPageLoaded++;
+}
+
+- (void)removeLoadingItem {
+    
+    for (int i = 0; i < restaurantsArray.count; i++) {
+    
+        RestaurantModel *restaurant = (RestaurantModel*) restaurantsArray[i];
+        
+        if (restaurant.isLoadingItem) {
+            [restaurantsArray removeObject:restaurant];
+            [_restaurantsCollectionView performBatchUpdates:^{
+                [_restaurantsCollectionView deleteItemsAtIndexPaths:@[[NSIndexPath indexPathForRow:i inSection:0]]];
+            } completion:^(BOOL finished) {}];
+            break;
+        }
+    }
+}
+
+#pragma <RestaurantsMapViewDelegate>
 
 - (void)didTapOnMarkerInfoWindow:(RestaurantModel *)restaurant {
     [self openRestaurnatProfile: restaurant];
@@ -115,21 +128,28 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    RestaurantCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"restaurantCollectionViewCell" forIndexPath:indexPath];
-    
+    UICollectionViewCell *cell;
+
     RestaurantModel *restaurant = restaurantsArray[indexPath.row];
-    [cell buildCell:restaurant];
+    
+    if (restaurant.isLoadingItem) {
+        cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"loaderCollectionViewCell" forIndexPath:indexPath];
+    } else {
+        cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"restaurantCollectionViewCell" forIndexPath:indexPath];
+        [(RestaurantCollectionViewCell*) cell buildCell:restaurant];
+    }
+   
     return cell;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake(self.view.bounds.size.width, 220);
+    RestaurantModel *restaurant = restaurantsArray[indexPath.row];
+    return CGSizeMake(self.view.bounds.size.width, restaurant.isLoadingItem ? 30 : 240);
 }
 
 - (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == restaurantsArray.count-1) {
-        self.paginationLoader.hidden = NO;
-        [restaurantsListPresenter getRestaurantsForRegion:_regionCode andPage:page];
+        [restaurantsListPresenter getRestaurantsForRegion:_regionCode andPage:currentPageLoaded];
     }
 }
 
@@ -139,16 +159,22 @@
     [self openRestaurnatProfile:(RestaurantModel*) restaurantsArray[indexPath.row]];
 }
 
+
 - (void)openRestaurnatProfile:(RestaurantModel*)restaurant {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
-    RestaurantProfileViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"RestaurantProfileViewController"];
+    RestaurantDetailsViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"RestaurantDetailsViewController"];
     vc.restaurant = restaurant;
     [self.navigationController pushViewController:vc animated:YES];
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
+- (void)openMapView {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+    RestaurantsMapViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"RestaurantsMapViewController"];
+    vc.restaurantsArray = restaurantsArray;
+    vc.delegate = self;
+    [self.navigationController pushViewController:vc animated:YES];
 }
+
 
 @end

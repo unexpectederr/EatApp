@@ -2,15 +2,16 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "eatlogopng.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "eatlogopng.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "eatlogopng-1.png",
       "scale" : "3x"
     }
   ],

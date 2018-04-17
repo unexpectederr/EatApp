@@ -11,6 +11,7 @@
 @interface RegionsViewController : UIViewController<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *regionsCollectionView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loader;
 
 @end
 

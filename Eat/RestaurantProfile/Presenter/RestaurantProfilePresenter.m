@@ -23,15 +23,25 @@
     return self;
 }
 
-- (void)getRestaurantsByRegion:(NSString*)region andCusine:(NSString*)cusine{
+- (void)getRestaurantsByRegion:(NSString*)region andCusine:(NSString*)cusine {
+    
+    __weak typeof(self) welf = self;
+
     [restaurantProfileInteractor getRestaurantsByRegion:region andCusine:cusine complete:^(NSArray *restaurants) {
-        [self.delegate didGetRestaurantsByCuisine:restaurants];
+        
+        [welf.delegate showRestaurantsByCuisine:restaurants];
+    
     }];
 }
 
-- (void)getRestaurantsByNeighbourhood:(NSString*)neighbourhood{
+- (void)getRestaurantsByNeighbourhood:(NSString*)neighbourhood {
+
+    __weak typeof(self) welf = self;
+
     [restaurantProfileInteractor getRestaurantsByNeighbourhood:neighbourhood complete:^(NSArray *restaurants) {
-        [self.delegate didGetRestaurantsByNeighbourhood:restaurants];
+        
+        [welf.delegate showRestaurantsByNeighbourhood:restaurants];
+    
     }];
 }
 
