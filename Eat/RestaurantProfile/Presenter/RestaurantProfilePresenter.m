@@ -29,7 +29,12 @@
 
     [restaurantProfileInteractor getRestaurantsByRegion:region andCusine:cusine complete:^(NSArray *restaurants) {
         
-        [welf.delegate showRestaurantsByCuisine:restaurants];
+        RestaurantProfilePresenter* strongSelf = welf;
+        
+        if (!strongSelf)
+            return;
+        
+        [strongSelf.delegate showRestaurantsByCuisine:restaurants];
     
     }];
 }
@@ -40,7 +45,12 @@
 
     [restaurantProfileInteractor getRestaurantsByNeighbourhood:neighbourhood complete:^(NSArray *restaurants) {
         
-        [welf.delegate showRestaurantsByNeighbourhood:restaurants];
+        RestaurantProfilePresenter* strongSelf = welf;
+        
+        if (!strongSelf)
+            return;
+        
+        [strongSelf.delegate showRestaurantsByNeighbourhood:restaurants];
     
     }];
 }

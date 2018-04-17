@@ -29,7 +29,13 @@
     __weak typeof(self) welf = self;
 
     [regionsInteractor getRegions:^(NSArray *regions) {
-        [welf.delegate showRegionsList:regions];
+        
+        RegionsPresenter* strongSelf = welf;
+        
+        if (!strongSelf)
+            return;
+        
+        [strongSelf.delegate showRegionsList:regions];
     }];
 }
 
@@ -38,7 +44,13 @@
     __weak typeof(self) welf = self;
 
     [regionsInteractor getCuisines:^(id responseObject) {
-        [welf.delegate didGetCuisines:responseObject];
+        
+        RegionsPresenter* strongSelf = welf;
+        
+        if (!strongSelf)
+            return;
+        
+        [strongSelf.delegate didGetCuisines:responseObject];
     }];
 }
 
@@ -47,7 +59,13 @@
     __weak typeof(self) welf = self;
 
     [regionsInteractor getNeigbourhoods:^(id responseObject) {
-        [welf.delegate didGetNeigbourhoods:responseObject];
+        
+        RegionsPresenter* strongSelf = welf;
+        
+        if (!strongSelf)
+            return;
+        
+        [strongSelf.delegate didGetNeigbourhoods:responseObject];
     }];
 }
 

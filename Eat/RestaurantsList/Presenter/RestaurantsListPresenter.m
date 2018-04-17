@@ -31,21 +31,26 @@
         
         [restaurantsListInteractor getRestaurantsForRegion:region andPage:page complete:^(NSArray *restaurants) {
            
+            RestaurantsListPresenter* strongSelf = welf;
+            
+            if (!strongSelf)
+                return;
+            
             if (restaurants.count) {
                 
                 if (page > 1) {
-                    [welf.delegate addNewSetOfRestaurnats:restaurants];
+                    [strongSelf.delegate addNewSetOfRestaurnats:restaurants];
                 } else {
-                    [welf.delegate showRestaurantsList:restaurants];
+                    [strongSelf.delegate showRestaurantsList:restaurants];
                 }
             } else {
-                [welf.delegate showEmptyContainer];
+                [strongSelf.delegate showEmptyContainer];
             }
         }];
         
     } else if (page > 1 && !restaurantsListInteractor.restaurantsLoadingLink) {
         
-        [welf.delegate removeLoadingItem];
+        [self.delegate removeLoadingItem];
         
     }
 }
