@@ -58,6 +58,7 @@ NSString *const RESTAURANTS_BY_NEIGHBOURHOOD = @"RESTAURANTS_BY_NEIGHBOURHOOD";
     _detailsTableView.delegate = self;
     _detailsTableView.estimatedRowHeight = 200.0;
     _detailsTableView.rowHeight = UITableViewAutomaticDimension;
+    _detailsTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _detailsTableView.backgroundColor = [UIColor colorWithCGColor:[UIHelper colorFromHexString:@"#F9FAFC"].CGColor];
     _detailsTableView.backgroundView.backgroundColor = [UIColor colorWithCGColor:[UIHelper colorFromHexString:@"#F9FAFC"].CGColor];
 
