@@ -3,25 +3,6 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "-[RestaurantProfileViewController viewDidLoad]:RestaurantProfileViewController.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.navigationController">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "__47-[RestaurantsMapView mapView:markerInfoWindow:]_block_invoke:RestaurantsMapView.m">
-      </ContextState>
-      <ContextState
-         contextName = "-[RestaurantsViewController viewDidLoad]:RestaurantsViewController.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.navigationItem">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "-[RestaurantCollectionViewCell prepareForReuse]:RestaurantCollectionViewCell.m">
          <PersistentStrings>
             <PersistentString
@@ -30,18 +11,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[ImagesPagerViewController pageViewController:didFinishAnimating:previousViewControllers:transitionCompleted:]:ImagesPagerViewController.m">
+         contextName = "-[RestaurantProfileViewController viewDidLoad]:RestaurantProfileViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "pageViewController.viewControllers">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[RestaurantCollectionViewCell buildCell:]:RestaurantCollectionViewCell.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.restaurantImage.bounds.size.height">
+               value = "self.navigationController">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -54,10 +27,21 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[RestaurantsListViewController didSwitchMainView]:RestaurantsListViewController.m">
+         contextName = "-[NavigationBarItems mainViewSwitch:]:NavigationBarItems.m">
          <PersistentStrings>
             <PersistentString
-               value = "self.navigationBarItems">
+               value = "self.delegate">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ImagesPagerViewController viewControllerAtIndex:]:ImagesPagerViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[ImageViewController viewDidLoad]:ImageViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.restaurantImage.bounds.size">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -71,25 +55,6 @@
                value = "[task allHeaderFields]">
             </PersistentString>
          </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[ImageViewController viewDidLoad]:ImageViewController.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.restaurantImage.bounds.size">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[RestaurantProfileViewController viewWillAppear:]:RestaurantProfileViewController.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.navigationController.navigationItem">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[ImagesPagerViewController viewControllerAtIndex:]:ImagesPagerViewController.m">
       </ContextState>
       <ContextState
          contextName = "-[RegionsInteractor getRegions:]:RegionsInteractor.m">
@@ -108,10 +73,37 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[NavigationBarItems mainViewSwitch:]:NavigationBarItems.m">
+         contextName = "-[RestaurantsListViewController didSwitchMainView]:RestaurantsListViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "self.delegate">
+               value = "self.navigationBarItems">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[RestaurantDetailsViewController collectionView:cellForItemAtIndexPath:]:RestaurantDetailsViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "collectionItems[indexPath.row]">
+            </PersistentString>
+            <PersistentString
+               value = "GENERIC_SECTION_TYPE_ONE">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ImageItemCollectionViewCell buildCell:]:ImageItemCollectionViewCell.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.bounds.size.width">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[RestaurantProfileViewController viewWillAppear:]:RestaurantProfileViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.navigationController.navigationItem">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -120,6 +112,22 @@
          <PersistentStrings>
             <PersistentString
                value = "cell.reviewText">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[RestaurantsViewController viewDidLoad]:RestaurantsViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.navigationItem">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[NotesCollectionCell readMoreBtn:]:NotesCollectionCell.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.superview">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -135,21 +143,21 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[RestaurantDetailsViewController collectionView:cellForItemAtIndexPath:]:RestaurantDetailsViewController.m">
+         contextName = "-[ImagesPagerViewController pageViewController:didFinishAnimating:previousViewControllers:transitionCompleted:]:ImagesPagerViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "GENERIC_SECTION_TYPE_ONE">
-            </PersistentString>
-            <PersistentString
-               value = "collectionItems[indexPath.row]">
+               value = "pageViewController.viewControllers">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[ImageItemCollectionViewCell buildCell:]:ImageItemCollectionViewCell.m">
+         contextName = "__47-[RestaurantsMapView mapView:markerInfoWindow:]_block_invoke:RestaurantsMapView.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[RestaurantCollectionViewCell buildCell:]:RestaurantCollectionViewCell.m">
          <PersistentStrings>
             <PersistentString
-               value = "self.bounds.size.width">
+               value = "self.restaurantImage.bounds.size.height">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
