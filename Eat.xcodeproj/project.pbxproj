@@ -66,6 +66,10 @@
 		AFD29CF4207A2394008AFF9F /* RatingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD29CF3207A2394008AFF9F /* RatingModel.m */; };
 		AFD29CF8207A35CA008AFF9F /* UIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD29CF7207A35CA008AFF9F /* UIHelper.m */; };
 		AFD29CFE207A3A91008AFF9F /* NSString+Repeat.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD29CFD207A3A91008AFF9F /* NSString+Repeat.m */; };
+		AFF3B1A8208743C500C1392E /* EmptyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AFF3B1A6208743C500C1392E /* EmptyCell.m */; };
+		AFF3B1A9208743C500C1392E /* EmptyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFF3B1A7208743C500C1392E /* EmptyCell.xib */; };
+		AFF3B1B1208759AA00C1392E /* CacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AFF3B1B0208759AA00C1392E /* CacheManager.m */; };
+		AFF3B1B420875CBC00C1392E /* CuisineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AFF3B1B320875CBC00C1392E /* CuisineModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -170,6 +174,13 @@
 		AFD29CF7207A35CA008AFF9F /* UIHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIHelper.m; sourceTree = "<group>"; };
 		AFD29CFC207A3A90008AFF9F /* NSString+Repeat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Repeat.h"; sourceTree = "<group>"; };
 		AFD29CFD207A3A91008AFF9F /* NSString+Repeat.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Repeat.m"; sourceTree = "<group>"; };
+		AFF3B1A5208743C500C1392E /* EmptyCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmptyCell.h; sourceTree = "<group>"; };
+		AFF3B1A6208743C500C1392E /* EmptyCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmptyCell.m; sourceTree = "<group>"; };
+		AFF3B1A7208743C500C1392E /* EmptyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyCell.xib; sourceTree = "<group>"; };
+		AFF3B1AF208759AA00C1392E /* CacheManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CacheManager.h; sourceTree = "<group>"; };
+		AFF3B1B0208759AA00C1392E /* CacheManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CacheManager.m; sourceTree = "<group>"; };
+		AFF3B1B220875CBC00C1392E /* CuisineModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CuisineModel.h; sourceTree = "<group>"; };
+		AFF3B1B320875CBC00C1392E /* CuisineModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CuisineModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -280,6 +291,9 @@
 				AF7EF297207CA89F003C56BD /* RestaurantSmallCollectionViewCell.h */,
 				AF7EF298207CA89F003C56BD /* RestaurantSmallCollectionViewCell.m */,
 				AF7EF299207CA89F003C56BD /* RestaurantSmallCollectionViewCell.xib */,
+				AFF3B1A5208743C500C1392E /* EmptyCell.h */,
+				AFF3B1A6208743C500C1392E /* EmptyCell.m */,
+				AFF3B1A7208743C500C1392E /* EmptyCell.xib */,
 			);
 			name = Views;
 			path = ViewsNew;
@@ -388,6 +402,8 @@
 			children = (
 				AFD29CCA2079F99D008AFF9F /* RegionModel.h */,
 				AFD29CCB2079F99D008AFF9F /* RegionModel.m */,
+				AFF3B1B220875CBC00C1392E /* CuisineModel.h */,
+				AFF3B1B320875CBC00C1392E /* CuisineModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -472,6 +488,8 @@
 				AF8CD3622083CDBF00F18173 /* ImageLoadingManager.m */,
 				AF8CD3642083DB0300F18173 /* EatImageView.h */,
 				AF8CD3652083DB0300F18173 /* EatImageView.m */,
+				AFF3B1AF208759AA00C1392E /* CacheManager.h */,
+				AFF3B1B0208759AA00C1392E /* CacheManager.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -569,6 +587,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF856788207CEE7F00143BCD /* TripAdvisorRevCollectionViewCell.xib in Resources */,
+				AFF3B1A9208743C500C1392E /* EmptyCell.xib in Resources */,
 				AFAC50A420850661000ABF61 /* ImageItemCollectionViewCell.xib in Resources */,
 				AFC044CA20866C7E00BCF146 /* NotesCell.xib in Resources */,
 				AFD29CD42079FEDE008AFF9F /* RegionCollectionViewCell.xib in Resources */,
@@ -601,12 +620,10 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Eat/Pods-Eat-resources.sh",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
-				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -642,6 +659,7 @@
 				AF7EF27F207B8B58003C56BD /* RestaurantsMapViewController.m in Sources */,
 				AFC044BA20862DBF00BCF146 /* ImagesPagerCell.m in Sources */,
 				AFAC50A320850661000ABF61 /* ImageItemCollectionViewCell.m in Sources */,
+				AFF3B1B420875CBC00C1392E /* CuisineModel.m in Sources */,
 				AFD29CCC2079F99D008AFF9F /* RegionModel.m in Sources */,
 				AF7EF29A207CA89F003C56BD /* RestaurantSmallCollectionViewCell.m in Sources */,
 				AFC044D32086758100BCF146 /* SimilarRestaurantsCell.m in Sources */,
@@ -655,6 +673,7 @@
 				AFD29CED207A0F8D008AFF9F /* RestaurantCollectionViewCell.m in Sources */,
 				AFC044C42086619300BCF146 /* GenericSectionCell.m in Sources */,
 				AF7EF287207B9A0E003C56BD /* RestaurantMarker.m in Sources */,
+				AFF3B1B1208759AA00C1392E /* CacheManager.m in Sources */,
 				AFD29CE6207A0F56008AFF9F /* RestaurantsListInteractor.m in Sources */,
 				AFC044C920866C7E00BCF146 /* NotesCell.m in Sources */,
 				AFD29CC52079F665008AFF9F /* RegionsInteractor.m in Sources */,
@@ -667,6 +686,7 @@
 				AFD29CAB2079F228008AFF9F /* Eat.xcdatamodeld in Sources */,
 				AFD29CB32079F228008AFF9F /* main.m in Sources */,
 				AF7EF28E207CA1EB003C56BD /* RestaurantProfilePresenter.m in Sources */,
+				AFF3B1A8208743C500C1392E /* EmptyCell.m in Sources */,
 				AFD29CD8207A0BD3008AFF9F /* RestaurantsListViewController.m in Sources */,
 				AFD29CF4207A2394008AFF9F /* RatingModel.m in Sources */,
 				AF578F87207B7CD800CF6190 /* NavigationBarItems.m in Sources */,

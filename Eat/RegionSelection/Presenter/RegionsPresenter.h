@@ -10,7 +10,7 @@
 
 @protocol RegionsPresenterProtocol
 
-- (void)showRegionsList:(NSArray*)regions;
+- (void)preselectOrShowRegionList:(NSArray*)regions;
 - (void)didGetCuisines:(id)response;
 - (void)didGetNeigbourhoods:(id)response;
 

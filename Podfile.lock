@@ -14,13 +14,12 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - Cashier (1.0.1)
   - GoogleMaps (2.5.0):
     - GoogleMaps/Maps (= 2.5.0)
   - GoogleMaps/Base (2.5.0)
   - GoogleMaps/Maps (2.5.0):
     - GoogleMaps/Base
-  - GooglePlaces (2.5.0):
-    - GoogleMaps/Base (= 2.5.0)
   - JSONModel (1.7.0)
   - SDWebImage (4.2.1):
     - SDWebImage/Core (= 4.2.1)
@@ -28,26 +27,26 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
+  - Cashier (~> 1.0.1)
   - GoogleMaps
-  - GooglePlaces
   - JSONModel
   - SDWebImage (~> 4.0)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - AFNetworking
+    - Cashier
     - GoogleMaps
-    - GooglePlaces
     - JSONModel
     - SDWebImage
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  Cashier: 434b2fca5186af7070d619cc9aa6a2fc6d20daa7
   GoogleMaps: c087b8e5dfe87ca6ebf59adb9b4894a4146bec4f
-  GooglePlaces: dd70d9d71ea1c7944846afe67de3712c99b30a77
   JSONModel: 840bc0fcffb24b8454d2c026bf26fea454b8e98d
   SDWebImage: 1fa4c9edf525b744f002db89f3f5a38b3cd4c541
 
-PODFILE CHECKSUM: c2bb14a07ac3e5f4b7d1b372907143c9990ecee7
+PODFILE CHECKSUM: 9950b3aa28e8a5253651f0950592110b7a70d566
 
 COCOAPODS: 1.5.0

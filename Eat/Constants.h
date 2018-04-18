@@ -9,3 +9,6 @@
 #define ENDPOINT_URL @"https://api.eatapp.co"
 #define API_VERSION @"v1"
 
+#define REGIONS_DATA @"REGIONS_DATA"
+#define CUISINES_DATA @"CUISINES_DATA"
+

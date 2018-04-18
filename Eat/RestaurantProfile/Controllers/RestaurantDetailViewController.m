@@ -17,6 +17,8 @@
 #import "UIHelper.h"
 #import "Constants.h"
 
+NSString *const HEADER_SECTION_TYPE = @"HEADER_SECTION_TYPE";
+NSString *const CONTENT_SECTION_TYPE = @"CONTENT_SECTION_TYPE";
 NSString *const GENERIC_SECTION_TYPE_ONE = @"GENERIC_SECTION_TYPE_ONE";
 NSString *const IMAGES_PAGER_SECTION = @"IMAGES_PAGER_SECTION";
 NSString *const BOOK_NOW_SECTION = @"BOOK_NOW_SECTION";
@@ -26,15 +28,18 @@ NSString *const RESTAURANT_NOTES = @"RESTAURANT_NOTES";
 NSString *const RESTAURANTS_BY_CUISINE = @"RESTAURANTS_BY_CUISINE";
 NSString *const RESTAURANTS_BY_NEIGHBOURHOOD = @"RESTAURANTS_BY_NEIGHBOURHOOD";
 
-@interface RestaurantDetailViewController () <UITableViewDataSource, UITableViewDelegate, RestaurantProfilePresenterProtocol,  NotesSectionProtocol, GenericSectionCollectionCellProtocol>
+@interface RestaurantDetailViewController () <UITableViewDataSource, UITableViewDelegate, RestaurantProfilePresenterProtocol, SimilarRestaurantsProtocol, NotesSectionProtocol, GenericSectionCollectionCellProtocol>
 
 @end
 
 @implementation RestaurantDetailViewController {
     RestaurantProfilePresenter *restaurantProfilePresenter;
-    NSMutableArray *collectionItems;
-    NSArray *restaurnatsByCuisine;
-    NSArray *restaurnatsByNeighbourhood;
+    NSArray *sections;
+    NSMutableArray *dataSource;
+    NSMutableArray *headerItems;
+    NSMutableArray *contentItems;
+    NSMutableArray *restaurnatsByCuisine;
+    NSMutableArray *restaurnatsByNeighbourhood;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -44,13 +49,20 @@ NSString *const RESTAURANTS_BY_NEIGHBOURHOOD = @"RESTAURANTS_BY_NEIGHBOURHOOD";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    collectionItems = [NSMutableArray arrayWithObjects:IMAGES_PAGER_SECTION,
-                       BOOK_NOW_SECTION,
+    sections = [[NSArray alloc] initWithObjects:HEADER_SECTION_TYPE, CONTENT_SECTION_TYPE, nil];
+
+    headerItems = [NSMutableArray arrayWithObjects:IMAGES_PAGER_SECTION, nil];
+    
+    contentItems = [NSMutableArray arrayWithObjects:
                        GENERIC_SECTION_TYPE_ONE,
                        GENERIC_SECTION_TYPE_TWO,
                        RESTAURANT_INFO,
                        RESTAURANT_NOTES,
                        nil];
+    
+    dataSource = [[NSMutableArray alloc] init];
+    [dataSource addObject:headerItems];
+    [dataSource addObject:contentItems];
     
     restaurantProfilePresenter = [[RestaurantProfilePresenter alloc] init];
     restaurantProfilePresenter.delegate = self;
@@ -58,6 +70,8 @@ NSString *const RESTAURANTS_BY_NEIGHBOURHOOD = @"RESTAURANTS_BY_NEIGHBOURHOOD";
     _detailsTableView.delegate = self;
     _detailsTableView.estimatedRowHeight = 200.0;
     _detailsTableView.rowHeight = UITableViewAutomaticDimension;
+    _detailsTableView.sectionHeaderHeight = UITableViewAutomaticDimension;
+    _detailsTableView.estimatedSectionHeaderHeight = 50;
     _detailsTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _detailsTableView.backgroundColor = [UIColor colorWithCGColor:[UIHelper colorFromHexString:@"#F9FAFC"].CGColor];
     _detailsTableView.backgroundView.backgroundColor = [UIColor colorWithCGColor:[UIHelper colorFromHexString:@"#F9FAFC"].CGColor];
@@ -73,6 +87,8 @@ NSString *const RESTAURANTS_BY_NEIGHBOURHOOD = @"RESTAURANTS_BY_NEIGHBOURHOOD";
     [_detailsTableView registerNib:[UINib nibWithNibName:@"NotesCell" bundle:nil] forCellReuseIdentifier:@"notesCell"];
 
     [_detailsTableView registerNib:[UINib nibWithNibName:@"SimilarRestaurantsCell" bundle:nil] forCellReuseIdentifier:@"similarRestaurantsCell"];
+   
+    [_detailsTableView registerNib:[UINib nibWithNibName:@"EmptyCell" bundle:nil] forCellReuseIdentifier:@"emptyCell"];
     
     [restaurantProfilePresenter getRestaurantsByRegion:_restaurant.region_id andCusine:_restaurant.cuisine_id];
     [restaurantProfilePresenter getRestaurantsByNeighbourhood:_restaurant.neighborhood_id];
@@ -81,16 +97,40 @@ NSString *const RESTAURANTS_BY_NEIGHBOURHOOD = @"RESTAURANTS_BY_NEIGHBOURHOOD";
 
 #pragma mark <RestaurantProfilePresenterProtocol>
 
--(void)showRestaurantsByCuisine:(NSArray *)restaurants {
-    restaurnatsByCuisine = restaurants;
-    [collectionItems addObject:RESTAURANTS_BY_CUISINE];
+- (void)showRestaurantsByCuisine:(NSArray *)restaurants {
+    restaurnatsByCuisine = [[NSMutableArray alloc] initWithArray:restaurants];
+    [self removeCurrentRestaurantFromList: restaurnatsByCuisine];
+    [contentItems addObject:RESTAURANTS_BY_CUISINE];
     [_detailsTableView reloadData];
 }
 
--(void)showRestaurantsByNeighbourhood:(NSArray *)restaurants {
-    restaurnatsByNeighbourhood = restaurants;
-    [collectionItems addObject:RESTAURANTS_BY_NEIGHBOURHOOD];
+- (void)showRestaurantsByNeighbourhood:(NSArray *)restaurants {
+    restaurnatsByNeighbourhood = [[NSMutableArray alloc] initWithArray:restaurants];
+    [self removeCurrentRestaurantFromList: restaurnatsByNeighbourhood];
+    [contentItems addObject:RESTAURANTS_BY_NEIGHBOURHOOD];
     [_detailsTableView reloadData];
+}
+
+- (void)removeCurrentRestaurantFromList:(NSMutableArray*)restaurants {
+    for (RestaurantModel *restaurant in restaurants) {
+        if ([restaurant.id isEqualToString:self.restaurant.id]) {
+            [restaurants removeObject:restaurant];
+            break;
+        }
+    }
+}
+
+#pragma mark <SimilarRestaurantsProtocol>
+
+-(void)didTapOnRestaurant:(RestaurantModel *)restaurant {
+    [self openRestaurnatProfile:restaurant];
+}
+
+- (void)openRestaurnatProfile:(RestaurantModel*)restaurant {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+    RestaurantDetailViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"RestaurantDetailViewController"];
+    vc.restaurant = restaurant;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark <NotesSectionProtocol>
@@ -112,41 +152,56 @@ NSString *const RESTAURANTS_BY_NEIGHBOURHOOD = @"RESTAURANTS_BY_NEIGHBOURHOOD";
 #pragma <UICollectionViewDelegate>
 
 - (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return sections.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return collectionItems.count;
+    return ((NSArray *)(dataSource[section])).count;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
+    UITableViewCell *cell;
+    
+    if ([sections[section] isEqualToString:CONTENT_SECTION_TYPE]) {
+         cell = [tableView dequeueReusableCellWithIdentifier:@"bookTableCell"];
+    } else if ([sections[section] isEqualToString:HEADER_SECTION_TYPE]){
+        cell = [tableView dequeueReusableCellWithIdentifier:@"emptyCell"];
+    }
+    
+    return cell;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *cell;
     
-    if ([collectionItems[indexPath.row] isEqualToString:IMAGES_PAGER_SECTION]) {
+    NSString *item = ((NSArray *)(dataSource[indexPath.section]))[indexPath.row];
+
+    if ([item isEqualToString:IMAGES_PAGER_SECTION]) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"imagesPagerCell" forIndexPath:indexPath];
         [(ImagesPagerCell*) cell buildCell:self.restaurant];
-    } else if ([collectionItems[indexPath.row] isEqualToString:BOOK_NOW_SECTION]) {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"bookTableCell" forIndexPath:indexPath];
-    } else if ([collectionItems[indexPath.row] isEqualToString:GENERIC_SECTION_TYPE_ONE]) {
+    } else if ([item isEqualToString:GENERIC_SECTION_TYPE_ONE]) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"genericSectionCell" forIndexPath:indexPath];
         ((GenericSectionCell*) cell).delegate = self;
         [(GenericSectionCell*) cell buildCell:self.restaurant sectionType:1];
-    } else if ([collectionItems[indexPath.row] isEqualToString:GENERIC_SECTION_TYPE_TWO]) {
+    } else if ([item isEqualToString:GENERIC_SECTION_TYPE_TWO]) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"genericSectionCell" forIndexPath:indexPath];
         [(GenericSectionCell*) cell buildCell:self.restaurant sectionType:2];
-    } else if ([collectionItems[indexPath.row] isEqualToString:RESTAURANT_INFO]) {
+    } else if ([item isEqualToString:RESTAURANT_INFO]) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"restaurantInfoCell" forIndexPath:indexPath];
         [(RestaurantInfoCell*) cell buildCell:self.restaurant];
-    } else if ([collectionItems[indexPath.row] isEqualToString:RESTAURANT_NOTES]) {
+    } else if ([item isEqualToString:RESTAURANT_NOTES]) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"notesCell" forIndexPath:indexPath];
         ((NotesCell*) cell).delegate = self;
         [(NotesCell*) cell buildCell:self.restaurant];
-    } else if ([collectionItems[indexPath.row] isEqualToString:RESTAURANTS_BY_CUISINE]) {
+    } else if ([item isEqualToString:RESTAURANTS_BY_CUISINE]) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"similarRestaurantsCell" forIndexPath:indexPath];
+        ((SimilarRestaurantsCell*) cell).delegate = self;
         [(SimilarRestaurantsCell*) cell buildCell:restaurnatsByCuisine sectionName:[[NSString stringWithFormat:@"Other %@ restaurnats", _restaurant.cuisine_name] uppercaseString]];
-    } else if ([collectionItems[indexPath.row] isEqualToString:RESTAURANTS_BY_NEIGHBOURHOOD]) {
+    } else if ([item isEqualToString:RESTAURANTS_BY_NEIGHBOURHOOD]) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"similarRestaurantsCell" forIndexPath:indexPath];
+        ((SimilarRestaurantsCell*) cell).delegate = self;
         [(SimilarRestaurantsCell*) cell buildCell:restaurnatsByNeighbourhood sectionName:[[NSString stringWithFormat:@"Other restaurnats in %@", _restaurant.neighborhood_name] uppercaseString]];
     }
     

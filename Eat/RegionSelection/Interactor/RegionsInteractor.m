@@ -10,6 +10,8 @@
 #import "AppDelegate.h"
 #import <AFNetworking.h>
 #import "RegionModel.h"
+#import "CuisineModel.h"
+#import "CacheManager.h"
 #import "Constants.h"
 
 @implementation RegionsInteractor
@@ -28,6 +30,8 @@
             RegionModel *region = [[RegionModel alloc] initWithDictionary:regionResponse error:&error];
             [regions addObject:region];
         }
+        
+        [[CacheManager sharedInstance] saveData:regions withId:REGIONS_DATA];
         
         completionBlock(regions);
      
@@ -50,7 +54,6 @@
     } failure:^(NSURLSessionTask *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
-    
 }
 
 - (void)getCuisines:(void (^)(id responseObject))completionBlock {
@@ -60,6 +63,15 @@
     NSString *url = [NSString stringWithFormat:@"%@/consumer/%@/%@", ENDPOINT_URL, API_VERSION, @"cuisines"];
     
     [manager GET:url parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
+        
+        NSMutableArray *cuisines = [[NSMutableArray alloc] init];
+        for (NSDictionary *cuisinesResponse in responseObject) {
+            NSError *error;
+            CuisineModel *cuisine = [[CuisineModel alloc] initWithDictionary:cuisinesResponse error:&error];
+            [cuisines addObject:cuisine];
+        }
+        
+        [[CacheManager sharedInstance] saveData:cuisines withId:CUISINES_DATA];
         
         completionBlock(responseObject);
         

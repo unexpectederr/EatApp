@@ -12,7 +12,7 @@
 
 static const int restaurantCellWidth = 140;
 
-@implementation SimilarRestaurantsCell{
+@implementation SimilarRestaurantsCell {
     NSArray *restaurantsArray;
 }
 
@@ -57,6 +57,12 @@ static const int restaurantCellWidth = 140;
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     return CGSizeMake(restaurantCellWidth, collectionView.bounds.size.height-10);
+}
+
+#pragma <UICollectionViewDelegate>
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    [self.delegate didTapOnRestaurant:restaurantsArray[indexPath.row]];
 }
 
 @end

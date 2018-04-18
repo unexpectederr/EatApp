@@ -35,7 +35,7 @@
         if (!strongSelf)
             return;
         
-        [strongSelf.delegate showRegionsList:regions];
+        [strongSelf.delegate preselectOrShowRegionList:regions];
     }];
 }
 

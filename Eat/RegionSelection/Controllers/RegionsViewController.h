@@ -12,6 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UICollectionView *regionsCollectionView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loader;
+@property (weak, nonatomic) IBOutlet UILabel *welcomeLabel;
 
 @end
 
