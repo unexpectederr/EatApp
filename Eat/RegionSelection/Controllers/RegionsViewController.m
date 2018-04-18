@@ -70,6 +70,9 @@ static const int regionCellHeight = 75;
         }
     }
     
+    /*
+     if only one region is present for given isCountryCode - open it
+     */
     if (regionCounter == 1) {
         [self openListOfRestaurants:regionId];
     } else {
