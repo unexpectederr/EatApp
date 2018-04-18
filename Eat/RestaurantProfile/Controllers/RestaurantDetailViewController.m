@@ -100,15 +100,19 @@ NSString *const RESTAURANTS_BY_NEIGHBOURHOOD = @"RESTAURANTS_BY_NEIGHBOURHOOD";
 - (void)showRestaurantsByCuisine:(NSArray *)restaurants {
     restaurnatsByCuisine = [[NSMutableArray alloc] initWithArray:restaurants];
     [self removeCurrentRestaurantFromList: restaurnatsByCuisine];
-    [contentItems addObject:RESTAURANTS_BY_CUISINE];
-    [_detailsTableView reloadData];
+    if (restaurnatsByCuisine.count) {
+        [contentItems addObject:RESTAURANTS_BY_CUISINE];
+        [_detailsTableView reloadData];
+    }
 }
 
 - (void)showRestaurantsByNeighbourhood:(NSArray *)restaurants {
     restaurnatsByNeighbourhood = [[NSMutableArray alloc] initWithArray:restaurants];
     [self removeCurrentRestaurantFromList: restaurnatsByNeighbourhood];
-    [contentItems addObject:RESTAURANTS_BY_NEIGHBOURHOOD];
-    [_detailsTableView reloadData];
+    if (restaurnatsByNeighbourhood.count) {
+        [contentItems addObject:RESTAURANTS_BY_NEIGHBOURHOOD];
+        [_detailsTableView reloadData];
+    }
 }
 
 - (void)removeCurrentRestaurantFromList:(NSMutableArray*)restaurants {
