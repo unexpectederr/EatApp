@@ -24,7 +24,14 @@
                              @"page": @(page),
                              };
 
+    RestaurantsListInteractor* __weak welf = self;
+
     [manager GET:url parameters:params progress:nil success:^(NSURLSessionTask *task, id responseObject) {
+        
+        RestaurantsListInteractor* strongSelf = welf;
+        
+        if (!strongSelf)
+            return;
         
         /*
          adding info about request so it can be used for pagination
@@ -33,7 +40,7 @@
         if ([httpResponse respondsToSelector:@selector(allHeaderFields)]) {
             NSDictionary *dictionary = [httpResponse allHeaderFields];
             if (dictionary[@"Link"])
-                self.restaurantsLoadingLink = dictionary[@"Link"];
+                strongSelf.restaurantsLoadingLink = dictionary[@"Link"];
         }
         
         NSMutableArray *restaurants = [[NSMutableArray alloc] init];

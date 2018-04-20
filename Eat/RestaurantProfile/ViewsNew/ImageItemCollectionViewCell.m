@@ -18,12 +18,14 @@
 
 - (void)buildCell:(NSString*)imageUrl {
     
+    ImageItemCollectionViewCell* __weak welf = self;
+
     [[ImageLoadingManager sharedInstance] loadImage:imageUrl withImageWidth:(int)self.bounds.size.width withImageHeight:(int)self.bounds.size.height complete:^(UIImage *image) {
-        self.image.image = image;
-        self.image.alpha = 0;
-        [UIView animateWithDuration:1.0f animations:^(void) {
-            self.image.alpha = 1;
-        }];
+        
+        ImageItemCollectionViewCell* strongSelf = welf;
+        if(!strongSelf) return;
+        
+        strongSelf.image.image = image;
     }];
 }
 

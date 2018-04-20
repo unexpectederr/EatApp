@@ -23,12 +23,7 @@
 
 - (void)buildCell:(RegionModel*)region {
     
-    [self.regionImage sd_setImageWithURL:[NSURL URLWithString:region.image_url] placeholderImage:nil completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
-        self.regionImage.alpha = 0;
-        [UIView animateWithDuration:0.5f animations:^(void) {
-            self.regionImage.alpha = 1;
-        }];
-    }];
+    [self.regionImage sd_setImageWithURL:[NSURL URLWithString:region.image_url] placeholderImage:nil completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {}];
     
     self.regionName.text = region.name;
     

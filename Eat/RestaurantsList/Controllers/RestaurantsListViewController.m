@@ -20,7 +20,6 @@
 
 @implementation RestaurantsListViewController {
 
-    NSMutableArray *restaurantsArray;
     int currentPageLoaded;
     RestaurantsListPresenter *restaurantsListPresenter;
     RestaurantsMapViewController *restaurantsMapView;
@@ -63,8 +62,8 @@
 
 - (void)showRestaurantsList:(NSArray *)restaurants {
     
-    restaurantsArray = [NSMutableArray arrayWithArray:restaurants];
-    [restaurantsArray addObject:[[RestaurantModel alloc] initLoadingItem]];
+    _restaurantsArray = [NSMutableArray arrayWithArray:restaurants];
+    [_restaurantsArray addObject:[[RestaurantModel alloc] initLoadingItem]];
     self.restaurantsCollectionView.hidden = NO;
     self.loadingIndicator.hidden = YES;
     [_restaurantsCollectionView reloadData];
@@ -73,22 +72,30 @@
 
 - (void)addNewSetOfRestaurnats:(NSArray *)restaurants {
     
-    [restaurantsArray addObjectsFromArray:restaurants];
-    [restaurantsArray addObject:[[RestaurantModel alloc] initLoadingItem]];
+    [_restaurantsArray addObjectsFromArray:restaurants];
+    [_restaurantsArray addObject:[[RestaurantModel alloc] initLoadingItem]];
    
+    RestaurantsListViewController* __weak welf = self;
+
     [_restaurantsCollectionView performBatchUpdates:^{
         
+        RestaurantsListViewController* strongSelf = welf;
+        if(!strongSelf) return;
+        
         NSMutableArray *indexesToReload = [NSMutableArray new];
-        NSUInteger start = restaurantsArray.count - restaurants.count - 1;
-        NSUInteger end = restaurantsArray.count;
+        NSUInteger start = strongSelf.restaurantsArray.count - restaurants.count - 1;
+        NSUInteger end = strongSelf.restaurantsArray.count;
         for(NSUInteger i = start; i < end; i++){
             [indexesToReload addObject:[NSIndexPath indexPathForRow:i inSection:0]];
         }
         
-        [_restaurantsCollectionView insertItemsAtIndexPaths:indexesToReload];
+        [strongSelf.restaurantsCollectionView insertItemsAtIndexPaths:indexesToReload];
   
     } completion:^(BOOL finished) {
-        [self removeLoadingItem];
+        RestaurantsListViewController* strongSelf = welf;
+        if(!strongSelf) return;
+        
+        [strongSelf removeLoadingItem];
     }];
     
     currentPageLoaded++;
@@ -96,14 +103,22 @@
 
 - (void)removeLoadingItem {
     
-    for (int i = 0; i < restaurantsArray.count; i++) {
+    for (int i = 0; i < _restaurantsArray.count; i++) {
     
-        RestaurantModel *restaurant = (RestaurantModel*) restaurantsArray[i];
+        RestaurantModel *restaurant = (RestaurantModel*) _restaurantsArray[i];
         
         if (restaurant.isLoadingItem) {
-            [restaurantsArray removeObject:restaurant];
+            [_restaurantsArray removeObject:restaurant];
+
+            RestaurantsListViewController* __weak welf = self;
+
             [_restaurantsCollectionView performBatchUpdates:^{
-                [_restaurantsCollectionView deleteItemsAtIndexPaths:@[[NSIndexPath indexPathForRow:i inSection:0]]];
+                
+                RestaurantsListViewController* strongSelf = welf;
+                if(!strongSelf) return;
+                
+                [strongSelf.restaurantsCollectionView deleteItemsAtIndexPaths:@[[NSIndexPath indexPathForRow:i inSection:0]]];
+                
             } completion:^(BOOL finished) {}];
             break;
         }
@@ -123,14 +138,14 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return restaurantsArray.count;
+    return _restaurantsArray.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     UICollectionViewCell *cell;
 
-    RestaurantModel *restaurant = restaurantsArray[indexPath.row];
+    RestaurantModel *restaurant = _restaurantsArray[indexPath.row];
     
     if (restaurant.isLoadingItem) {
         cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"loaderCollectionViewCell" forIndexPath:indexPath];
@@ -143,12 +158,12 @@
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    RestaurantModel *restaurant = restaurantsArray[indexPath.row];
+    RestaurantModel *restaurant = _restaurantsArray[indexPath.row];
     return CGSizeMake(self.view.bounds.size.width, restaurant.isLoadingItem ? 30 : 240);
 }
 
 - (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == restaurantsArray.count-1) {
+    if (indexPath.row == _restaurantsArray.count-1) {
         [restaurantsListPresenter getRestaurantsForRegion:_regionCode andPage:currentPageLoaded];
     }
 }
@@ -156,7 +171,7 @@
 #pragma <UICollectionViewDelegate>
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    [self openRestaurnatProfile:(RestaurantModel*) restaurantsArray[indexPath.row]];
+    [self openRestaurnatProfile:(RestaurantModel*) _restaurantsArray[indexPath.row]];
 }
 
 
@@ -171,7 +186,7 @@
 - (void)openMapView {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
     RestaurantsMapViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"RestaurantsMapViewController"];
-    vc.restaurantsArray = restaurantsArray;
+    vc.restaurantsArray = _restaurantsArray;
     vc.delegate = self;
     [self.navigationController pushViewController:vc animated:YES];
 }

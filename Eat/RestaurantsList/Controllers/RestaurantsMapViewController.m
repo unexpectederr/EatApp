@@ -49,9 +49,18 @@
     view.frame = CGRectMake(0, 0, 310, 60);
     view.restaurantName.text = marker.restaurant.name;
     view.restaurantAddress.text = marker.restaurant.address_line_1;
+    
+    MarkerInfoView* __weak welf = view;
+
     [[ImageLoadingManager sharedInstance] loadImage:marker.restaurant.image_url withImageWidth:view.restaurantImage.bounds.size.width withImageHeight:view.restaurantImage.bounds.size.height complete:^(UIImage *image) {
-        view.restaurantImage.image = image;
+        
+        MarkerInfoView* strongView = welf;
+        if(!strongView) return;
+        
+        strongView.restaurantImage.image = image;
+        
     }];
+    
     return view;
 }
 

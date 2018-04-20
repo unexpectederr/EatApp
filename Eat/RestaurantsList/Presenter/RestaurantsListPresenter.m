@@ -25,7 +25,7 @@
 
 - (void)getRestaurantsForRegion:(NSString*)region andPage:(NSInteger)page {
 
-    __weak typeof(self) welf = self;
+    RestaurantsListPresenter* __weak welf = self;
 
     if (page == 1 || [restaurantsListInteractor.restaurantsLoadingLink containsString:[NSString stringWithFormat:@"page=%li", (long)page]]) {
         

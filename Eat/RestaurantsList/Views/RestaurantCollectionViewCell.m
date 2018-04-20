@@ -63,12 +63,15 @@
     
     self.restaurantImage.imageUrl = restaurant.image_url;
     
+    RestaurantCollectionViewCell* __weak welf = self;
+
     [[ImageLoadingManager sharedInstance] loadImage:restaurant.image_url withImageWidth:(int)self.restaurantImage.bounds.size.width withImageHeight:(int)self.restaurantImage.bounds.size.height complete:^(UIImage *image) {
-        self.restaurantImage.image = image;
-        self.restaurantImage.alpha = 0;
-        [UIView animateWithDuration:1.0f animations:^(void) {
-            self.restaurantImage.alpha = 1;
-        }];
+        
+        RestaurantCollectionViewCell* strongSelf = welf;
+        if(!strongSelf) return;
+        
+        strongSelf.restaurantImage.image = image;
+        
     }];
 }
 

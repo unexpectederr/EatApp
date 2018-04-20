@@ -26,7 +26,7 @@
 
 - (void)getRegions {
     
-    __weak typeof(self) welf = self;
+    RegionsPresenter* __weak welf = self;
 
     [regionsInteractor getRegions:^(NSArray *regions) {
         
@@ -41,7 +41,7 @@
 
 - (void)getCuisines {
     
-    __weak typeof(self) welf = self;
+    RegionsPresenter* __weak welf = self;
 
     [regionsInteractor getCuisines:^(id responseObject) {
         
@@ -56,7 +56,7 @@
 
 - (void)getNeigbourhoods {
     
-    __weak typeof(self) welf = self;
+    RegionsPresenter* __weak welf = self;
 
     [regionsInteractor getNeigbourhoods:^(id responseObject) {
         

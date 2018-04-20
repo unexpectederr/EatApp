@@ -25,7 +25,7 @@
 
 - (void)getRestaurantsByRegion:(NSString*)region andCusine:(NSString*)cusine {
     
-    __weak typeof(self) welf = self;
+    RestaurantProfilePresenter* __weak welf = self;
 
     [restaurantProfileInteractor getRestaurantsByRegion:region andCusine:cusine complete:^(NSArray *restaurants) {
         
@@ -41,7 +41,7 @@
 
 - (void)getRestaurantsByNeighbourhood:(NSString*)neighbourhood {
 
-    __weak typeof(self) welf = self;
+    RestaurantProfilePresenter* __weak welf = self;
 
     [restaurantProfileInteractor getRestaurantsByNeighbourhood:neighbourhood complete:^(NSArray *restaurants) {
         

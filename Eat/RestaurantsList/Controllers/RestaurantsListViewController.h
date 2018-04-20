@@ -12,6 +12,7 @@
 @interface RestaurantsListViewController : UIViewController
 
 @property (strong, nonatomic) NSString *regionCode;
+@property (strong, nonatomic) NSMutableArray *restaurantsArray;
 @property (weak, nonatomic) IBOutlet UICollectionView *restaurantsCollectionView;
 @property (weak, nonatomic) IBOutlet UILabel *emptyListMessage;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingIndicator;

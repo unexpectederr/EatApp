@@ -22,8 +22,14 @@
     self.restaurantName.text = restaurant.name;
     self.cuisineName.text = restaurant.cuisine_name;
     
+    RestaurantSmallCollectionViewCell* __weak welf = self;
+
     [[ImageLoadingManager sharedInstance] loadImage:restaurant.image_url withImageWidth:(int)self.restaurantImage.bounds.size.width withImageHeight:(int)self.restaurantImage.bounds.size.height complete:^(UIImage *image) {
-        self.restaurantImage.image = image;
+       
+        RestaurantSmallCollectionViewCell* strongSelf = welf;
+        if(!strongSelf) return;
+        
+        strongSelf.restaurantImage.image = image;
     }];
     
     CAShapeLayer * maskLayer = [CAShapeLayer layer];
